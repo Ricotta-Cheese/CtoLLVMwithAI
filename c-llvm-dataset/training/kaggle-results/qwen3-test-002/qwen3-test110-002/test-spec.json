@@ -1,0 +1,21 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "system_prompt": "Translate the provided C function to a complete LLVM IR module for the specified target. Return only LLVM IR, without Markdown fences or explanations.",
+  "dataset_sha256": "0fe38cf8695beff5278ee339e8814d1ea36b60d5b8dad3fea58a3cd35e99e9ca",
+  "corpus_manifest_sha256": "b9512fdb84e92f329374196b58e7c6f9ba9de78ed2a02ebf0103f86cd4340d19",
+  "splits_sha256": "607ba5a22cea5ccafc9d8a5372920b3ea20a8a9aee864fecf468b20b759f48df",
+  "adapter_sha256": "ceb001bb704984fad25159641437a042a882a6c3f7f1348aea017bdd695ac1a1",
+  "max_new_tokens": 4096,
+  "max_seconds_per_function": 600,
+  "decoding": "one greedy raw candidate; no repair or retries",
+  "mode": "inference_only",
+  "use_model_defaults": false,
+  "do_sample": false,
+  "test_inputs_sha256": "ef2984938e487a4bff766f93a58f226ad4776673395914ca261378ac5f73b2c1",
+  "test_count": 110,
+  "training_kernel": "ritaainsworth/magicompile-qwen3-4b-corpus1100-001",
+  "training_kernel_version": 1,
+  "native_execution_plan": "locked native Apple Clang evaluation locally; Kaggle performs inference only",
+  "evaluation_source_sha256": "dc80fba61d7245eac3748c019df3770cdb2dfc36894cc0ca3b22efbb93d26abb"
+}

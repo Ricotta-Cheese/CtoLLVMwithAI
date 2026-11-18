@@ -1,0 +1,1 @@
+{"category":"branch","compiled":true,"completed":true,"contract_passed":true,"execution_passed":true,"function_success":true,"generated_ir_sha256":"658455d6b43f3cb7498d3268faf174d88005c62ba38c00647348e57b91f3eff0","id":"ext001-branch-006","input_count":256,"llvm_verified":true,"matching_inputs":256,"output_count":256,"stage":"passed"}

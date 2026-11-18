@@ -1,0 +1,56 @@
+--- teacher.ll
++++ generated.ll
+@@ -56,7 +56,7 @@
+   %16 = load i32, ptr %x.addr, align 4
+   %17 = load i32, ptr %x.addr, align 4
+   %xor8 = xor i32 15, %17
+-  %sub9 = sub i32 7, %xor8
++  %sub9 = sub i32 0, %xor8
+   %add10 = add i32 %16, %sub9
+   %xor11 = xor i32 %15, %add10
+   store i32 %xor11, ptr %acc, align 4
+@@ -91,7 +91,7 @@
+   %xor15 = xor i32 %24, %25
+   %and16 = and i32 %xor15, 65536
+   %cmp17 = icmp eq i32 %and16, 0
+-  br i1 %cmp17, label %if.then18, label %if.else24
++  br i1 %cmp17, label %if.then18, label %if.else23
+ 
+ if.then18:                                        ; preds = %for.end
+   %26 = load i32, ptr %acc, align 4
+@@ -107,25 +107,24 @@
+   %31 = load i32, ptr %y.addr, align 4
+   %xor23 = xor i32 %30, %31
+   store i32 %xor23, ptr %acc, align 4
+-  br label %if.end30
++  br label %if.end27
+ 
+-if.else24:                                        ; preds = %for.end
++if.else23:                                        ; preds = %for.end
+   %32 = load i32, ptr %acc, align 4
+   %33 = load i32, ptr %x.addr, align 4
+-  %xor25 = xor i32 3, %33
++  %xor24 = xor i32 3, %33
+   %34 = load i32, ptr %y.addr, align 4
+   %or = or i32 1, %34
+-  %add26 = add i32 %xor25, %or
+-  %xor27 = xor i32 %32, %add26
+-  store i32 %xor27, ptr %acc, align 4
++  %add25 = add i32 %xor24, %or
++  %xor26 = xor i32 %32, %add25
++  store i32 %xor26, ptr %acc, align 4
+   %35 = load i32, ptr %acc, align 4
+   %36 = load i32, ptr %x.addr, align 4
+-  %xor28 = xor i32 %36, -1238518317
+-  %xor29 = xor i32 %35, %xor28
+-  store i32 %xor29, ptr %acc, align 4
+-  br label %if.end30
++  %xor27 = xor i32 %35, 3056448979
++  store i32 %xor27, ptr %acc, align 4
++  br label %if.end27
+ 
+-if.end30:                                         ; preds = %if.else24, %if.then18
++if.end27:                                         ; preds = %if.else23, %if.then18
+   %37 = load i32, ptr %acc, align 4
+   ret i32 %37
+ }

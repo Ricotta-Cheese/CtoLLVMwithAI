@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -43,7 +43,7 @@
+   %12 = load i32, ptr %acc, align 4
+   %13 = load i32, ptr %y.addr, align 4
+   %mul4 = mul i32 %12, %13
+-  %sub = sub i32 %mul4, 7
++  %sub = sub i32 %mul4, 8
+   %14 = load i32, ptr %x.addr, align 4
+   %15 = load i32, ptr %acc, align 4
+   %16 = load i32, ptr %y.addr, align 4

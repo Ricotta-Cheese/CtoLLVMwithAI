@@ -1,0 +1,30 @@
+{
+  "actual_optimizer_steps": 20.0,
+  "elapsed_seconds": 26.953824343999997,
+  "environment": {
+    "cuda_version": "13.0",
+    "gpu_count": 2,
+    "gpu_memory_gib": 14.56219482421875,
+    "gpu_name": "Tesla T4",
+    "pretrained_weights_used": false,
+    "tokenizers_version": "0.22.2",
+    "torch_version": "2.11.0+cu130",
+    "used_device": "cuda:0"
+  },
+  "final_validation_loss": 2.916630373862026,
+  "initial_validation_loss": 6.9221803195186435,
+  "optimizer_step_attempts": 20,
+  "parameter_count": 27253760,
+  "peak_gpu_memory_gib": 1.7498078346252441,
+  "resumed_from_step": 10,
+  "scope": "GPU training, checkpoint save and resume smoke test; not compilation accuracy",
+  "split_sizes": {
+    "test": 10,
+    "train": 80,
+    "validation": 10
+  },
+  "status": "passed",
+  "test_set_evaluated": false,
+  "vocabulary_size": 900,
+  "weights_changed": true
+}

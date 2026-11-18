@@ -1,0 +1,133 @@
+{
+  "status": "proposal_only",
+  "date": "2026-11-16",
+  "new_training_started": false,
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "scope": "C11 uint32 compute(x,y), arithmetic/bitwise/branches/single bounded loop; no pointer/array/while/nested loop expansion",
+  "new_data": {
+    "total": 2000,
+    "train": 1600,
+    "validation": 200,
+    "test": 200,
+    "train_by_category": {
+      "arithmetic": 240,
+      "bitwise": 320,
+      "branch": 160,
+      "loop": 240,
+      "combined": 640
+    },
+    "validation_by_category": {
+      "arithmetic": 40,
+      "bitwise": 40,
+      "branch": 40,
+      "loop": 40,
+      "combined": 40
+    },
+    "test_by_category": {
+      "arithmetic": 40,
+      "bitwise": 40,
+      "branch": 40,
+      "loop": 40,
+      "combined": 40
+    },
+    "validation_iid": 150,
+    "validation_family_ood": 50,
+    "test_iid": 100,
+    "test_family_ood": 100
+  },
+  "existing_train_reused": 880,
+  "combined_training_rows": 2480,
+  "combined_corpus_rows": 2880,
+  "old_validation_policy": "diagnostics only; never added to training",
+  "old_test_policy": "historical diagnostics only, not a fresh final test",
+  "profile": {
+    "version": "proposed-v002",
+    "separate_fields": [
+      "target-cpu",
+      "target-features"
+    ],
+    "preserve_originals": true,
+    "semantic_instruction_repair": false,
+    "teacher_roundtrip_required": 1100
+  },
+  "experiments": [
+    {
+      "id": "B0",
+      "training": "none; frozen existing adapter",
+      "steps": 0
+    },
+    {
+      "id": "B1",
+      "rows": 880,
+      "steps": 220,
+      "epochs": 1,
+      "change": "CPU profile separation only",
+      "start": "fresh adapter on exact base"
+    },
+    {
+      "id": "B2",
+      "rows": 2480,
+      "steps": 620,
+      "epochs": 1,
+      "change": "new data package; same profile as B1",
+      "start": "fresh adapter on exact base"
+    }
+  ],
+  "initial_training": {
+    "quantization": "NF4 double",
+    "compute_dtype": "FP16",
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear",
+    "learning_rate": 0.0001,
+    "micro_batch": 1,
+    "gradient_accumulation": 4,
+    "truncate_outputs": false
+  },
+  "decoding": {
+    "do_sample": false,
+    "use_model_defaults": false,
+    "max_new_tokens": 4096,
+    "max_seconds_per_function": 600,
+    "candidates_per_function": 1
+  },
+  "metrics": [
+    "raw_strict_function_success",
+    "shared_profile_system_function_success",
+    "local_ignored_sha_function_success"
+  ],
+  "development_panel": {
+    "total": 50,
+    "old_validation": 25,
+    "new_validation": 25,
+    "new_iid": 15,
+    "new_family_ood": 10
+  },
+  "final_evaluation": {
+    "models": [
+      "frozen B0",
+      "one frozen selected candidate"
+    ],
+    "functions_per_model": 200,
+    "minimum_inputs_per_function": 1024,
+    "also_report_original_256": true,
+    "select_on_final_test": false
+  },
+  "proposed_targets_not_measured": {
+    "overall_success_rate": 0.75,
+    "combined_success_rate": 0.55
+  },
+  "job_wall_clock_caps_hours": {
+    "B1_training": 3,
+    "B2_training": 7,
+    "development_inference_total": 5,
+    "final_test_separate_budget": 14
+  },
+  "budget_caveat": "Planning wall time only; not equivalent to billed GPU-hours or guaranteed platform quota. Check live limits before execution.",
+  "evidence": "training/proposals/v002/evidence.json",
+  "proposal": "docs/NEXT_TRAINING_PROPOSAL.md"
+}

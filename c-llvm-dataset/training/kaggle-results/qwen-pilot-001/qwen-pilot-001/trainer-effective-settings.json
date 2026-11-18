@@ -1,0 +1,6 @@
+{
+  "gradient_accumulation_steps": 4,
+  "train_batch_size": 1,
+  "trainer_n_gpu": 1,
+  "visible_gpus": 1
+}

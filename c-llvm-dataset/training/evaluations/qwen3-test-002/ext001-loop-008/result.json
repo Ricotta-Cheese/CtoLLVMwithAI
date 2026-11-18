@@ -1,0 +1,1 @@
+{"category":"loop","compiled":true,"completed":true,"contract_passed":true,"execution_passed":true,"function_success":true,"generated_ir_sha256":"28e942c60151abd4f0bee40bd58bbf7120619b406127b70dc09f7510b4463055","id":"ext001-loop-008","input_count":256,"llvm_verified":true,"matching_inputs":256,"output_count":256,"stage":"passed"}

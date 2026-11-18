@@ -1,0 +1,28 @@
+--- teacher.ll
++++ generated.ll
+@@ -115,11 +115,11 @@
+   %35 = load i32, ptr %acc, align 4
+   %36 = load i32, ptr %y.addr, align 4
+   %shr24 = lshr i32 %36, 26
+-  %or = or i32 251658240, %shr24
++  %or = or i32 15672000, %shr24
+   %shl25 = shl i32 %or, 20
+   %xor26 = xor i32 %35, %shl25
+   store i32 %xor26, ptr %acc, align 4
+-  br label %if.end38
++  br label %if.end30
+ 
+ if.else27:                                        ; preds = %for.end
+   %37 = load i32, ptr %acc, align 4
+@@ -142,9 +142,9 @@
+   %add36 = add i32 %shr33, %mul35
+   %xor37 = xor i32 %40, %add36
+   store i32 %xor37, ptr %acc, align 4
+-  br label %if.end38
++  br label %if.end30
+ 
+-if.end38:                                         ; preds = %if.else27, %if.then23
++if.end30:                                         ; preds = %if.else27, %if.then23
+   %45 = load i32, ptr %acc, align 4
+   ret i32 %45
+ }

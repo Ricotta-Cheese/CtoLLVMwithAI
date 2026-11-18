@@ -1,0 +1,74 @@
+{
+  "adapter_parameter_count": 9232384,
+  "files": {
+    "adapter-best/adapter_config.json": {
+      "bytes": 1053,
+      "sha256": "6bf0b2aa884a8a70fffd50c9184d401aaabf4b61e55438df45d6ad6786287ecc"
+    },
+    "adapter-best/adapter_model.safetensors": {
+      "bytes": 36981072,
+      "sha256": "f94b60b0ae29a09d9da096a28ca896579dc7b728b26387be24eec11e2e1eb730"
+    },
+    "adapter-best/added_tokens.json": {
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b"
+    },
+    "adapter-best/merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "adapter-best/special_tokens_map.json": {
+      "bytes": 502,
+      "sha256": "a6c4ad853ac58fffa339d4d4cdb6020d282b9a8067f6c0c889c69a63dbe8daf0"
+    },
+    "adapter-best/tokenizer.json": {
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+    },
+    "adapter-best/tokenizer_config.json": {
+      "bytes": 4688,
+      "sha256": "03b92675a127fe2fecefa4801bcfb276897393707e2d13ce785b446234c15383"
+    },
+    "adapter-best/vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "metrics.json": {
+      "bytes": 2619,
+      "sha256": "41f33e0971713d340ad4046419da7792a46da13a41d9445f1f5017faf96c7c6d"
+    },
+    "qwen-base-4bit-predictions.jsonl": {
+      "bytes": 29479,
+      "sha256": "9b303866450fd87f1d945ce6dd16bd8bfc377d112dca78296008ea599e9055ca"
+    },
+    "qwen-qlora-predictions.jsonl": {
+      "bytes": 36223,
+      "sha256": "506f19fd2d5c4e3076d308cd4550181a537558d988c0a7d10ad2c5341522e1f8"
+    },
+    "run-spec.json": {
+      "bytes": 3030,
+      "sha256": "9ccd4351302a34c967957cbfb75fdb13526c0d98fb9ad936ed19b24df3518403"
+    },
+    "scratch-pilot-predictions.jsonl": {
+      "bytes": 34810,
+      "sha256": "998fb3201dfb89c53f893d1f8f10ff8ec7698c6fd1018326d5ed0592b5810c1f"
+    },
+    "splits.json": {
+      "bytes": 1958,
+      "sha256": "4a624a365f7e495af487e4a14475c3769f82fa71545a65a045a6ac578f8fdd0f"
+    },
+    "summary.json": {
+      "bytes": 630,
+      "sha256": "d2b5e122223a6c20683e8607e1287c25f829b1f01946525c8934a284858e3a00"
+    },
+    "trainer-effective-settings.json": {
+      "bytes": 107,
+      "sha256": "a93c72fba0274335c692fd574b88eda2e504e8527c25ffd4b9f0fd58ca29e150"
+    }
+  },
+  "finite_adapter_weights": true,
+  "lora_B_updated": true,
+  "single_gpu_training_verified": true,
+  "status": "passed",
+  "test_set_evaluated": false
+}

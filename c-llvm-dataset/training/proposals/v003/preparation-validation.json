@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "document_plan_and_existing_evidence_consistency",
+  "checks": {
+    "counts": true,
+    "split_counts": true,
+    "panel": true,
+    "steps": true,
+    "source_hashes": true,
+    "local_links": true,
+    "token_calculation": true
+  },
+  "broken_links": [],
+  "package_sha256": {
+    "docs/NEXT_TRAINING_PREPARATION.md": "4266aeb86860168118f0efe624af6b516da0b7e560839e793d82ce03af20ec4d",
+    "docs/NEXT_TRAINING_CODEGEN_SPEC.md": "78cfb9c130c626bbaa691eedd722aef0beae68f4abbd0174de3bbf4991aecc69",
+    "training/proposals/v003/preparation-plan.json": "c7d2135ccab1afe696d6b7479f062d8934dc89a56efaa6ef2be626223b46f708",
+    "training/proposals/v003/preparation-evidence.json": "60a5009bbd60df1070522593bc89d5537de7a4a5de3fdeaf2a10e863c0de1bae"
+  },
+  "runtime_gates_executed": false
+}

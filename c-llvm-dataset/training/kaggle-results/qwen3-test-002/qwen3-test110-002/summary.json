@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "mode": "inference_only",
+  "test_functions": 110,
+  "completed": 110,
+  "gpu_workers": 2,
+  "native_execution_evaluated": false,
+  "native_execution_plan": "locked Apple Clang local evaluation of raw IR; no retargeting or repair"
+}

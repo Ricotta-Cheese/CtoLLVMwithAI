@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/kaggle/src/script.py", line 31, in <module>
+    subprocess.check_call([str(python), str(source / 'qwen_train.py')])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 420, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/kaggle/temp/qwen-venv/bin/python', '/kaggle/temp/qwen-source/qwen_train.py']' returned non-zero exit status 1.

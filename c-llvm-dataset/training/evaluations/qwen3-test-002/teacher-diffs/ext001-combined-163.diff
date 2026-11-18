@@ -1,0 +1,113 @@
+--- teacher.ll
++++ generated.ll
+@@ -80,68 +80,63 @@
+   %xor19 = xor i32 %23, %shr18
+   store i32 %xor19, ptr %acc, align 4
+   %25 = load i32, ptr %acc, align 4
+-  %26 = load i32, ptr %i, align 4
+-  %and20 = and i32 0, %26
+-  %27 = load i32, ptr %x.addr, align 4
+-  %28 = load i32, ptr %i, align 4
+-  %add21 = add i32 %27, %28
+-  %29 = load i32, ptr %i, align 4
+-  %mul22 = mul i32 %29, 7
+-  %mul23 = mul i32 %add21, %mul22
+-  %mul24 = mul i32 %and20, %mul23
+-  %xor25 = xor i32 %25, %mul24
+-  store i32 %xor25, ptr %acc, align 4
++  %26 = load i32, ptr %acc, align 4
++  %shr20 = lshr i32 %26, 10
++  %shr21 = lshr i32 %shr20, 19
++  %shr22 = lshr i32 %shr21, 29
++  %xor23 = xor i32 %25, %shr22
++  store i32 %xor23, ptr %acc, align 4
+   br label %if.end
+ 
+ if.else:                                          ; preds = %for.body
+-  %30 = load i32, ptr %acc, align 4
+-  %31 = load i32, ptr %x.addr, align 4
+-  %xor26 = xor i32 %30, %31
+-  store i32 %xor26, ptr %acc, align 4
+-  %32 = load i32, ptr %acc, align 4
+-  %33 = load i32, ptr %x.addr, align 4
+-  %xor27 = xor i32 2, %33
+-  %shr28 = lshr i32 %xor27, 22
+-  %shr29 = lshr i32 %shr28, 6
+-  %xor30 = xor i32 %32, %shr29
+-  store i32 %xor30, ptr %acc, align 4
++  %27 = load i32, ptr %acc, align 4
++  %28 = load i32, ptr %x.addr, align 4
++  %xor24 = xor i32 %27, %28
++  store i32 %xor24, ptr %acc, align 4
++  %29 = load i32, ptr %acc, align 4
++  %30 = load i32, ptr %x.addr, align 4
++  %xor25 = xor i32 2, %30
++  %shr26 = lshr i32 %xor25, 22
++  %shr27 = lshr i32 %shr26, 6
++  %xor28 = xor i32 %29, %shr27
++  store i32 %xor28, ptr %acc, align 4
+   br label %if.end
+ 
+ if.end:                                           ; preds = %if.else, %if.then
+   br label %for.inc
+ 
+ for.inc:                                          ; preds = %if.end
+-  %34 = load i32, ptr %i, align 4
+-  %inc = add i32 %34, 1
++  %31 = load i32, ptr %i, align 4
++  %inc = add i32 %31, 1
+   store i32 %inc, ptr %i, align 4
+   br label %for.cond, !llvm.loop !5
+ 
+ for.end:                                          ; preds = %for.cond
+-  %35 = load i32, ptr %x.addr, align 4
+-  %36 = load i32, ptr %y.addr, align 4
+-  %xor31 = xor i32 %35, %36
+-  %and32 = and i32 %xor31, 262144
+-  %cmp33 = icmp eq i32 %and32, 0
+-  br i1 %cmp33, label %if.then34, label %if.else38
++  %32 = load i32, ptr %x.addr, align 4
++  %33 = load i32, ptr %y.addr, align 4
++  %xor29 = xor i32 %32, %33
++  %and30 = and i32 %xor29, 262144
++  %cmp31 = icmp eq i32 %and30, 0
++  br i1 %cmp31, label %if.then32, label %if.else34
+ 
+-if.then34:                                        ; preds = %for.end
++if.then32:                                        ; preds = %for.end
++  %34 = load i32, ptr %acc, align 4
++  %35 = load i32, ptr %y.addr, align 4
++  %xor33 = xor i32 2, %35
++  %shl34 = shl i32 %xor33, 7
++  %xor35 = xor i32 %34, %shl34
++  store i32 %xor35, ptr %acc, align 4
++  br label %if.end36
++
++if.else34:                                        ; preds = %for.end
++  %36 = load i32, ptr %acc, align 4
++  %xor37 = xor i32 %36, 1073741824
++  store i32 %xor37, ptr %acc, align 4
++  br label %if.end36
++
++if.end36:                                         ; preds = %if.else34, %if.then32
+   %37 = load i32, ptr %acc, align 4
+-  %38 = load i32, ptr %y.addr, align 4
+-  %xor35 = xor i32 2, %38
+-  %shl36 = shl i32 %xor35, 7
+-  %xor37 = xor i32 %37, %shl36
+-  store i32 %xor37, ptr %acc, align 4
+-  br label %if.end40
+-
+-if.else38:                                        ; preds = %for.end
+-  %39 = load i32, ptr %acc, align 4
+-  %xor39 = xor i32 %39, 0
+-  store i32 %xor39, ptr %acc, align 4
+-  br label %if.end40
+-
+-if.end40:                                         ; preds = %if.else38, %if.then34
+-  %40 = load i32, ptr %acc, align 4
+-  ret i32 %40
++  ret i32 %37
+ }
+ 
+ attributes #0 = { noinline nounwind optnone ssp uwtable(sync) "frame-pointer"="non-leaf" "no-trapping-math"="true" "probe-stack"="__chkstk_darwin" "stack-protector-buffer-size"="8" "target-cpu"="apple-m1" "target-features"="+aes,+altnzcv,+bti,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8.5a,+v8a" }

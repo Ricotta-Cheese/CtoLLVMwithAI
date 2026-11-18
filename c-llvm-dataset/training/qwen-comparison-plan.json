@@ -1,0 +1,34 @@
+{
+  "validation_ids": [
+    "arithmetic-017",
+    "arithmetic-007",
+    "bitwise-016",
+    "bitwise-015",
+    "branch-018",
+    "branch-017",
+    "combined-010",
+    "combined-019",
+    "loop-018",
+    "loop-005"
+  ],
+  "comparison": [
+    "scratch-pilot-step175",
+    "qwen-base-nf4",
+    "qwen-qlora-best-of-20-40-60"
+  ],
+  "test_set_evaluated": false,
+  "context_length": 3072,
+  "max_generated_tokens": 2560,
+  "max_seconds_per_function": {
+    "scratch": 120,
+    "qwen": 300
+  },
+  "samples_per_function": 1,
+  "decoding": "greedy",
+  "raw_output_no_repairs": true,
+  "qwen_steps": 60,
+  "qwen_effective_batch": 4,
+  "scratch_model_sha256": "c28fb8e3ecf5ccce442174d31fb34f794aa5f40d366f3635f1fc424731136598",
+  "decision": "provisional validation comparison only; confirm later with expanded data and frozen test",
+  "time_limit_note": "Scratch completed every function below 10 seconds; Qwen receives longer time to avoid a throughput-only failure."
+}

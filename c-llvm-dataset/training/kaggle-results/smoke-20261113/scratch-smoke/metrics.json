@@ -1,0 +1,108 @@
+[
+  {
+    "step": 0,
+    "validation_loss": 6.9221803195186435
+  },
+  {
+    "learning_rate": 0.00015,
+    "step": 1,
+    "training_loss": 6.893748766247571
+  },
+  {
+    "learning_rate": 0.000225,
+    "step": 2,
+    "training_loss": 6.034119332573455
+  },
+  {
+    "learning_rate": 0.0003,
+    "step": 3,
+    "training_loss": 5.550837442785528
+  },
+  {
+    "learning_rate": 0.0003,
+    "step": 4,
+    "training_loss": 5.120448719850276
+  },
+  {
+    "learning_rate": 0.0002974060128544361,
+    "step": 5,
+    "training_loss": 5.1159889914772725
+  },
+  {
+    "learning_rate": 0.0002897237368890237,
+    "step": 6,
+    "training_loss": 4.620185562125846
+  },
+  {
+    "learning_rate": 0.0002772483976608436,
+    "step": 7,
+    "training_loss": 4.39255713162304
+  },
+  {
+    "learning_rate": 0.0002604594154601839,
+    "step": 8,
+    "training_loss": 4.120187142638809
+  },
+  {
+    "learning_rate": 0.0002400019814576463,
+    "step": 9,
+    "training_loss": 3.7402536348610487
+  },
+  {
+    "learning_rate": 0.00021666226336928708,
+    "step": 10,
+    "training_loss": 4.025117910879629,
+    "validation_loss": 3.6074906985935455
+  },
+  {
+    "learning_rate": 0.00019133719347217733,
+    "step": 11,
+    "training_loss": 3.735441762817618
+  },
+  {
+    "learning_rate": 0.000165,
+    "step": 12,
+    "training_loss": 3.3862250365046886
+  },
+  {
+    "learning_rate": 0.00013866280652782267,
+    "step": 13,
+    "training_loss": 3.500268132431702
+  },
+  {
+    "learning_rate": 0.00011333773663071288,
+    "step": 14,
+    "training_loss": 3.3010364135526897
+  },
+  {
+    "learning_rate": 8.999801854235373e-05,
+    "step": 15,
+    "training_loss": 3.387175878585364
+  },
+  {
+    "learning_rate": 6.954058453981609e-05,
+    "step": 16,
+    "training_loss": 3.2235994574240987
+  },
+  {
+    "learning_rate": 5.275160233915637e-05,
+    "step": 17,
+    "training_loss": 3.0853454180821855
+  },
+  {
+    "learning_rate": 4.027626311097629e-05,
+    "step": 18,
+    "training_loss": 2.990962550227021
+  },
+  {
+    "learning_rate": 3.259398714556389e-05,
+    "step": 19,
+    "training_loss": 3.1881920284457377
+  },
+  {
+    "learning_rate": 2.9999999999999997e-05,
+    "step": 20,
+    "training_loss": 3.188423530629139,
+    "validation_loss": 2.916630373862026
+  }
+]

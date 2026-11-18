@@ -1,0 +1,20 @@
+{
+  "reason": "Finder metadata added after dataset manifest; no manifest-listed files changed",
+  "removed": [
+    {
+      "path": "artifacts/.DS_Store",
+      "bytes": 8196,
+      "sha256": "c42776da21c3ebbde819e38666bb1a2d13916eb22cc00b28dda341b0db9e7973"
+    },
+    {
+      "path": "artifacts/samples/.DS_Store",
+      "bytes": 8196,
+      "sha256": "d7ec2df08a28fc5c9ca8ff804ae4de8c3cbaec7fdde73253c0d89012b6c09200"
+    },
+    {
+      "path": "artifacts-ext001/samples/.DS_Store",
+      "bytes": 241668,
+      "sha256": "b5b96e2616d8d1a9393ced3da573bce7d7bf38191d18ea35ca6988183eb32fd5"
+    }
+  ]
+}

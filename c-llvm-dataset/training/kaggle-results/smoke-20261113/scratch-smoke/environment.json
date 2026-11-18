@@ -1,0 +1,10 @@
+{
+  "cuda_version": "13.0",
+  "gpu_count": 2,
+  "gpu_memory_gib": 14.56219482421875,
+  "gpu_name": "Tesla T4",
+  "pretrained_weights_used": false,
+  "tokenizers_version": "0.22.2",
+  "torch_version": "2.11.0+cu130",
+  "used_device": "cuda:0"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "local_links_checked": 15,
+  "broken_links": [],
+  "proposal_bytes": 27145,
+  "corpus_and_plan_counts_consistent": true,
+  "evidence_hashes_match": true,
+  "new_training_started": false,
+  "proposal_sha256": "d0eb9d117a93bad942e747978061bf025cb84044a6471239adebdda04de36632",
+  "experiment_plan_sha256": "4b523433212953fd2d6ae7ad82db881a077c2b3438b96b2409aa47dbf281854a"
+}

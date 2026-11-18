@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "scope": "read-only proposal evidence; no training or new performance evaluation",
+  "corpus_integrity": {
+    "status": "passed",
+    "sample_count": 1100,
+    "file_count": 8,
+    "split_counts": {
+      "train": 880,
+      "validation": 110,
+      "test": 110
+    }
+  },
+  "coarse_shape_definition": "AST const/var values, identifiers and operators erased; statement nesting and expression topology retained",
+  "coarse_shape_caveat": "Exploratory post-hoc grouping, not evidence of production split leakage or memorization",
+  "unique_coarse_shapes": 989,
+  "train_test_shared_coarse_groups": 12,
+  "coarse_shape_by_category": {
+    "arithmetic": {
+      "test_count": 22,
+      "test_samples_sharing_coarse_shape_with_train": 4
+    },
+    "bitwise": {
+      "test_count": 22,
+      "test_samples_sharing_coarse_shape_with_train": 4
+    },
+    "branch": {
+      "test_count": 22,
+      "test_samples_sharing_coarse_shape_with_train": 1
+    },
+    "combined": {
+      "test_count": 22,
+      "test_samples_sharing_coarse_shape_with_train": 0
+    },
+    "loop": {
+      "test_count": 22,
+      "test_samples_sharing_coarse_shape_with_train": 5
+    }
+  },
+  "unique_target_feature_lists": 1,
+  "exact_plus_sha_count": 0,
+  "plus_sha2_count": 1100,
+  "plus_sha3_count": 1100,
+  "completion_characters": 3259337,
+  "target_cpu_and_features_characters": 320100,
+  "attribute_character_fraction": 0.09821015746453957,
+  "attribute_fraction_caveat": "Character ratio only; token savings and latency change not measured",
+  "sources": {
+    "corpus-1100-v001/dataset.jsonl": "0fe38cf8695beff5278ee339e8814d1ea36b60d5b8dad3fea58a3cd35e99e9ca",
+    "corpus-1100-v001/splits.json": "607ba5a22cea5ccafc9d8a5372920b3ea20a8a9aee864fecf468b20b759f48df",
+    "training/evaluations/qwen3-test-002/analysis.json": "a10586f34195e9cfc1c6d9917b7ae24d36ccc507beedd5eee4e685981e917523",
+    "docs/reviews/20261116_external_review.txt": "f2698d5601a66bfc3cc14e3694e2076e64698059e96faec102fc1467174b045b",
+    "training/audit_next_training.py": "664d32073296acfeec94d05073b635d0c72999cf52296998ca4ad9fb6889252a"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "prepared_date": "2026-11-16",
+  "status": "read_only_sources_checked_runtime_gates_pending",
+  "corpus_integrity": {
+    "status": "passed",
+    "sample_count": 1100,
+    "file_count": 8,
+    "split_counts": {
+      "train": 880,
+      "validation": 110,
+      "test": 110
+    }
+  },
+  "baseline_counts": {
+    "compiled": 108,
+    "completed": 110,
+    "contract_passed": 108,
+    "execution_passed": 72,
+    "function_success": 72,
+    "llvm_verified": 108
+  },
+  "cpu_attributes_equal_teacher_in_predictions": 110,
+  "baseline_predictions": 110,
+  "coarse_shapes": {
+    "unique": 989,
+    "singleton": 944
+  },
+  "combined_failures_in_instruction_operand_group": 14,
+  "prior_review_token_calculation": {
+    "method": "ASCII tokenizer pretokenization + BPE merges reconstructed with Python standard library from saved tokenizer.json",
+    "scope": "remove two attribute spans including preceding space; completion only",
+    "original_completion_tokens": 1525782,
+    "removed_tokens_per_completion": 143,
+    "rows": 1100,
+    "removed_tokens_total": 157300,
+    "fraction": 0.10309467538612986,
+    "generated_count_crosscheck": "110/110 reproduced recorded generated_tokens including EOS",
+    "official_tokenizers_crosscheck_pending": true,
+    "recomputed_during_preparation": true
+  },
+  "known_local_regression": {
+    "directory": "../LocalTestPipeline/outputs/20261116_125953_add_c14401",
+    "input_count": 256,
+    "matching_inputs": 0,
+    "first_mismatch": {
+      "x": 0,
+      "y": 0,
+      "c_result": 2,
+      "ai_result": 0,
+      "match": false
+    },
+    "source_behavior": "x = x + 1; y = y + 2; return x * y",
+    "generated_missing_update": "x = x + 1",
+    "classification": "exposed_diagnostic_only"
+  },
+  "source_sha256": {
+    "docs/NEXT_TRAINING_PROPOSAL.md": "d0eb9d117a93bad942e747978061bf025cb84044a6471239adebdda04de36632",
+    "training/proposals/v002/experiment-plan.json": "4b523433212953fd2d6ae7ad82db881a077c2b3438b96b2409aa47dbf281854a",
+    "corpus-1100-v001/dataset.jsonl": "0fe38cf8695beff5278ee339e8814d1ea36b60d5b8dad3fea58a3cd35e99e9ca",
+    "corpus-1100-v001/splits.json": "607ba5a22cea5ccafc9d8a5372920b3ea20a8a9aee864fecf468b20b759f48df",
+    "training/qwen3_train.py": "aaf203613e7fcd49bac265ff9c6760eb06fef88ed54697c6d2d0db6146608045",
+    "training/evaluate_generated_ir.py": "bf86ce7a328eac2c52b4968684544bb3e3dd062f514a0b4588f612e048ff9813",
+    "training/qwen_requirements.txt": "1ae2453bfe94d5d04ada76575bfd8e817d4a708bfda61a1a7a9092ebd9b4680d",
+    "toolchain.lock.json": "7e0129b585ba1877e66d5361cee9e7b89623ef8bceb0e8b1a37205ecf76bb31f",
+    "training/qwen3-model-lock.json": "0800718f1465e5bc99f3f608811520df6c78b0560b423d00a1a1b75e9e67a1f8",
+    "training/kaggle-qwen3-test-001/test-spec.json": "f2b6aa1cbf77bbd228274d082be9634cb0e686f313c8b44fab4b22671c5d0d5c",
+    "training/kaggle-results/qwen3-test-002/qwen3-test110-002/test-predictions.jsonl": "8efd8176c3ee63345c0506b45494c8827fbce0f2a4fcb53bcc0f63194121c7a9",
+    "training/evaluations/qwen3-test-002/analysis.json": "a10586f34195e9cfc1c6d9917b7ae24d36ccc507beedd5eee4e685981e917523",
+    "training/proposals/v002/coarse-shape-groups.json": "d9f02e7e8a6a0fd9d5bede3076070b0c8ab5d303786f9984352c4bf7b097fd43",
+    "training/kaggle-results/qwen3-001/qwen3-4b-corpus1100-001/adapter-best/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "local_source_sha256": {
+    "../LocalTestPipeline/outputs/20261116_125953_add_c14401/report.json": "eb4d88ec0160c2610458da3960b911604961b5176cfdbce989f9f4f8bd12d116",
+    "../LocalTestPipeline/outputs/20261116_125953_add_c14401/source.c": "9317727a19f89b13f26a4ba58d7435dc6f10a5939747b478aa903064e4445dc2",
+    "../LocalTestPipeline/outputs/20261116_125953_add_c14401/generated.ll": "a629f30b8556071d8db60f1494a0c61a9afd52d0fd4bed9f735ee54e0449b9bd"
+  },
+  "limitations": [
+    "Token calculation reuses the prior review result and awaits official runtime crosscheck.",
+    "No new model inference, profile roundtrip or new corpus generation was performed.",
+    "Family catalog, new maximum-length GPU memory and live resource availability await implementation or execution."
+  ]
+}

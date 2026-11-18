@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -36,7 +36,7 @@
+   %8 = load i32, ptr %x.addr, align 4
+   %9 = load i32, ptr %y.addr, align 4
+   %and3 = and i32 %8, %9
+-  %sub = sub i32 50331648, %and3
++  %sub = sub i32 16777216, %and3
+   %xor = xor i32 %7, %sub
+   store i32 %xor, ptr %acc, align 4
+   %10 = load i32, ptr %acc, align 4

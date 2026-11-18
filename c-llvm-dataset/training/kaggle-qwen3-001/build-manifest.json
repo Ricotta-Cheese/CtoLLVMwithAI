@@ -1,0 +1,9 @@
+{
+  "dataset_sha256": "0fe38cf8695beff5278ee339e8814d1ea36b60d5b8dad3fea58a3cd35e99e9ca",
+  "corpus_manifest_sha256": "b9512fdb84e92f329374196b58e7c6f9ba9de78ed2a02ebf0103f86cd4340d19",
+  "splits_sha256": "607ba5a22cea5ccafc9d8a5372920b3ea20a8a9aee864fecf468b20b759f48df",
+  "training_source_sha256": "aaf203613e7fcd49bac265ff9c6760eb06fef88ed54697c6d2d0db6146608045",
+  "requirements_sha256": "1ae2453bfe94d5d04ada76575bfd8e817d4a708bfda61a1a7a9092ebd9b4680d",
+  "payload_sha256": "bd50aab95e14850b8f42de805e66c2830efc5a25a91edfa812165b97c0c22757",
+  "run_py_bytes": 535882
+}

@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -59,7 +59,7 @@
+ 
+ if.end:                                           ; preds = %if.else, %if.then
+   %17 = load i32, ptr %acc, align 4
+-  %xor11 = xor i32 %17, 0
++  %xor11 = xor i32 %17, 1
+   store i32 %xor11, ptr %acc, align 4
+   %18 = load i32, ptr %acc, align 4
+   ret i32 %18

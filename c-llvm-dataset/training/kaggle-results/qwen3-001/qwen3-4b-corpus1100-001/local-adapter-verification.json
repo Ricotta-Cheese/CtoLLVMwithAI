@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "steps": 220,
+  "parameters": 16515072,
+  "tensors": 504,
+  "nonzero_lora_B_tensors": 252,
+  "adapter_sha256": "ceb001bb704984fad25159641437a042a882a6c3f7f1348aea017bdd695ac1a1",
+  "initial_validation_loss": 0.7523650527000427,
+  "best_validation_loss": 0.00444857869297266,
+  "test_set_evaluated": false,
+  "native_accuracy": "separate LLVM and execution evaluation required"
+}

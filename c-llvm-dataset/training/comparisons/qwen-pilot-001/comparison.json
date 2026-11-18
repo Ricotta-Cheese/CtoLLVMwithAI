@@ -1,0 +1,49 @@
+{
+  "scope": "exploratory validation comparison; no final model selection",
+  "table": [
+    {
+      "model": "scratch-pilot",
+      "functions": 10,
+      "compiled": 0,
+      "completed": 10,
+      "contract_passed": 0,
+      "execution_passed": 0,
+      "function_success": 0,
+      "llvm_verified": 0,
+      "report": "training/comparisons/qwen-pilot-001/scratch-pilot/report.json"
+    },
+    {
+      "model": "qwen-base-4bit",
+      "functions": 10,
+      "compiled": 0,
+      "completed": 7,
+      "contract_passed": 0,
+      "execution_passed": 0,
+      "function_success": 0,
+      "llvm_verified": 0,
+      "report": "training/comparisons/qwen-pilot-001/qwen-base-4bit/report.json"
+    },
+    {
+      "model": "qwen-qlora",
+      "functions": 10,
+      "compiled": 4,
+      "completed": 8,
+      "contract_passed": 4,
+      "execution_passed": 2,
+      "function_success": 2,
+      "llvm_verified": 4,
+      "report": "training/comparisons/qwen-pilot-001/qwen-qlora/report.json"
+    }
+  ],
+  "leading_on_finite_execution": [
+    "qwen-qlora"
+  ],
+  "leading_execution_success_count": 2,
+  "test_set_evaluated": false,
+  "limitations": [
+    "ten validation functions; model sizes, tokenizers, pretraining and training budgets differ",
+    "same raw prompts and finite inputs; greedy single candidate; no repair",
+    "legal LLVM outside the supported pure-integer contract is not executed",
+    "finite execution tests do not prove equivalence"
+  ]
+}

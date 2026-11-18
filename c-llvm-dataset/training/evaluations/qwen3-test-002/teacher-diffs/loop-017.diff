@@ -1,0 +1,19 @@
+--- teacher.ll
++++ generated.ll
+@@ -38,13 +38,13 @@
+   %xor = xor i32 %7, %shl
+   store i32 %xor, ptr %acc, align 4
+   %9 = load i32, ptr %acc, align 4
+-  %10 = load i32, ptr %i, align 4
++  %10 = load i32, ptr %i.addr, align 4
+   %shr = lshr i32 %10, 23
+   %11 = load i32, ptr %acc, align 4
+-  %12 = load i32, ptr %i, align 4
++  %12 = load i32, ptr %i.addr, align 4
+   %add3 = add i32 %11, %12
+   %sub = sub i32 %shr, %add3
+-  %mul = mul i32 192937984, %sub
++  %mul = mul i32 23, %sub
+   %xor4 = xor i32 %9, %mul
+   store i32 %xor4, ptr %acc, align 4
+   br label %for.inc

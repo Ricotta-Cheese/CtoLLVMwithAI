@@ -1,0 +1,20 @@
+--- teacher.ll
++++ generated.ll
+@@ -29,7 +29,7 @@
+   store i32 %xor3, ptr %acc, align 4
+   %7 = load i32, ptr %acc, align 4
+   %8 = load i32, ptr %acc, align 4
+-  %or = or i32 %8, 90947691
++  %or = or i32 %8, -100000000
+   %xor4 = xor i32 %7, %or
+   store i32 %xor4, ptr %acc, align 4
+   %9 = load i32, ptr %acc, align 4
+@@ -42,7 +42,7 @@
+   %13 = load i32, ptr %y.addr, align 4
+   %and = and i32 %12, %13
+   %and8 = and i32 %or7, %and
+-  %and9 = and i32 %shl6, %and8
++  %and9 = and i32 %shl6, %and9
+   %xor10 = xor i32 %9, %and9
+   store i32 %xor10, ptr %acc, align 4
+   %14 = load i32, ptr %acc, align 4

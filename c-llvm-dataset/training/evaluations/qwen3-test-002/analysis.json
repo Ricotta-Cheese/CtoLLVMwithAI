@@ -1,0 +1,759 @@
+{
+  "status": "passed",
+  "test_functions": 110,
+  "stored_input_cases": 28160,
+  "counts": {
+    "compiled": 108,
+    "completed": 110,
+    "contract_passed": 108,
+    "execution_passed": 72,
+    "function_success": 72,
+    "llvm_verified": 108
+  },
+  "rates": {
+    "compiled": 0.9818181818181818,
+    "completed": 1.0,
+    "contract_passed": 0.9818181818181818,
+    "execution_passed": 0.6545454545454545,
+    "function_success": 0.6545454545454545,
+    "llvm_verified": 0.9818181818181818
+  },
+  "categories": {
+    "arithmetic": {
+      "count": 22,
+      "llvm_verified": 22,
+      "success": 16,
+      "success_rate": 0.7272727272727273
+    },
+    "bitwise": {
+      "count": 22,
+      "llvm_verified": 21,
+      "success": 16,
+      "success_rate": 0.7272727272727273
+    },
+    "branch": {
+      "count": 22,
+      "llvm_verified": 22,
+      "success": 17,
+      "success_rate": 0.7727272727272727
+    },
+    "loop": {
+      "count": 22,
+      "llvm_verified": 21,
+      "success": 15,
+      "success_rate": 0.6818181818181818
+    },
+    "combined": {
+      "count": 22,
+      "llvm_verified": 22,
+      "success": 8,
+      "success_rate": 0.36363636363636365
+    }
+  },
+  "failure_stages": {
+    "execute": 36,
+    "llvm_verify": 2,
+    "passed": 72
+  },
+  "semantic_diff_groups": {
+    "only_numeric_literal_differences": [
+      "bitwise-007",
+      "loop-011",
+      "ext001-arithmetic-085",
+      "ext001-arithmetic-059",
+      "ext001-arithmetic-196",
+      "ext001-bitwise-027",
+      "ext001-bitwise-028",
+      "ext001-branch-047",
+      "ext001-branch-014",
+      "ext001-branch-041",
+      "ext001-branch-087",
+      "ext001-branch-146",
+      "ext001-loop-102",
+      "ext001-loop-110",
+      "ext001-loop-184",
+      "ext001-loop-041"
+    ],
+    "instruction_or_operand_structure_differences": [
+      "combined-003",
+      "combined-011",
+      "ext001-arithmetic-041",
+      "ext001-arithmetic-130",
+      "ext001-arithmetic-056",
+      "ext001-bitwise-190",
+      "ext001-bitwise-114",
+      "ext001-combined-015",
+      "ext001-combined-150",
+      "ext001-combined-182",
+      "ext001-combined-048",
+      "ext001-combined-029",
+      "ext001-combined-153",
+      "ext001-combined-163",
+      "ext001-combined-134",
+      "ext001-combined-161",
+      "ext001-combined-171",
+      "ext001-combined-004",
+      "ext001-combined-122",
+      "ext001-loop-174"
+    ]
+  },
+  "diff_scope": "Exact normalized instruction-body comparison, ignoring comments and masking numeric literals; heuristic description, not a formal causal attribution",
+  "failures": [
+    {
+      "id": "bitwise-007",
+      "category": "bitwise",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 15,
+        "expected": 11,
+        "input": {
+          "x": 0,
+          "y": 15
+        }
+      },
+      "matching_inputs": 95,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "combined-003",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 525539602,
+        "expected": 525539600,
+        "input": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "matching_inputs": 211,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "combined-011",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3957608620,
+        "expected": 3957608622,
+        "input": {
+          "x": 0,
+          "y": 15
+        }
+      },
+      "matching_inputs": 27,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "loop-011",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3221225472,
+        "expected": 3841809278,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 23,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "loop-017",
+      "category": "loop",
+      "stage": "llvm_verify",
+      "error": "clang exited 1: module.ll:41:23: error: use of undefined value '%i.addr'\n   41 |   %10 = load i32, ptr %i.addr, align 4\n      |                       ^\n1 error generated.\n",
+      "input_count": 256
+    },
+    {
+      "id": "ext001-arithmetic-041",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 27,
+        "expected": 0,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 1,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-arithmetic-130",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4278353742,
+        "expected": 3608382186,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 23,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-arithmetic-085",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294967294,
+        "expected": 4294967293,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-arithmetic-059",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294967292,
+        "expected": 0,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 8,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-arithmetic-196",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2560822854,
+        "expected": 2560822714,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-arithmetic-056",
+      "category": "arithmetic",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2903464793,
+        "expected": 1391502683,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 20,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-bitwise-190",
+      "category": "bitwise",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 0,
+        "expected": 1,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 1,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-bitwise-027",
+      "category": "bitwise",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 1838716530,
+        "expected": 3649660704,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-bitwise-114",
+      "category": "bitwise",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3287442765,
+        "expected": 0,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-bitwise-178",
+      "category": "bitwise",
+      "stage": "llvm_verify",
+      "error": "clang exited 1: error: invalid LLVM IR input: Only PHI nodes may reference their own value!\n  %and9 = and i32 %shl6, %and9\n\n1 error generated.\n",
+      "input_count": 256
+    },
+    {
+      "id": "ext001-bitwise-028",
+      "category": "bitwise",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 1073741827,
+        "expected": 67108867,
+        "input": {
+          "x": 2147483647,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 171,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-branch-047",
+      "category": "branch",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 6,
+        "expected": 5,
+        "input": {
+          "x": 1,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 217,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-branch-014",
+      "category": "branch",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294967294,
+        "expected": 4294967295,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-branch-041",
+      "category": "branch",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 669636735,
+        "expected": 3625330559,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 139,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-branch-087",
+      "category": "branch",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 31744,
+        "expected": 31807,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 0,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-branch-146",
+      "category": "branch",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2147483407,
+        "expected": 2147479663,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 144,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-combined-015",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 1744830467,
+        "expected": 1673527299,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 133,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-150",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3855,
+        "expected": 1543,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 102,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-182",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2147483650,
+        "expected": 2,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 140,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-048",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 1073741808,
+        "expected": 463033490,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 136,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-029",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294967295,
+        "expected": 4294967265,
+        "input": {
+          "x": 2,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 182,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-153",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2013265930,
+        "expected": 2013265943,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 143,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-163",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3221225472,
+        "expected": 2147483648,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 130,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-134",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2147483648,
+        "expected": 2147491344,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 131,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-161",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 2,
+        "expected": 8194,
+        "input": {
+          "x": 0,
+          "y": 2147483647
+        }
+      },
+      "matching_inputs": 142,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-171",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294934542,
+        "expected": 17,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 43,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-004",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 738197504,
+        "expected": 0,
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "matching_inputs": 118,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-combined-122",
+      "category": "combined",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 33,
+        "expected": 35,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 34,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-loop-174",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4294967287,
+        "expected": 11,
+        "input": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      "matching_inputs": 68,
+      "input_count": 256,
+      "diff_classification": "instruction_or_operand_structure_differences"
+    },
+    {
+      "id": "ext001-loop-102",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 3294967296,
+        "expected": 4083547473,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 21,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-loop-110",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 4160749569,
+        "expected": 4294049793,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 121,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-loop-184",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 0,
+        "expected": 2,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 158,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    },
+    {
+      "id": "ext001-loop-041",
+      "category": "loop",
+      "stage": "execute",
+      "error": "execution_output_mismatch",
+      "counterexample": {
+        "actual": 16777217,
+        "expected": 50331649,
+        "input": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "matching_inputs": 118,
+      "input_count": 256,
+      "diff_classification": "only_numeric_literal_differences"
+    }
+  ],
+  "generation": {
+    "mode": "greedy",
+    "max_tokens": 4096,
+    "max_seconds_per_function": 600,
+    "completed": 110,
+    "limit_reasons": {},
+    "mean_seconds": 212.11091079351817,
+    "median_seconds": 189.6371855804996,
+    "max_observed_seconds": 415.8951466339986,
+    "sum_worker_generation_seconds": 23332.200187287,
+    "log_duration_seconds": 12011.440671685,
+    "peak_gpu_allocated_gib_per_worker": [
+      3.746215343475342,
+      3.746215343475342
+    ]
+  },
+  "provenance": {
+    "adapter_sha256": "ceb001bb704984fad25159641437a042a882a6c3f7f1348aea017bdd695ac1a1",
+    "predictions_sha256": "8efd8176c3ee63345c0506b45494c8827fbce0f2a4fcb53bcc0f63194121c7a9",
+    "native_report_sha256": "1b56570e44fa25e881e4c4509da12422399f0ef00663b66c5954626973cd4d4d",
+    "log_sha256": "c2cfad5657f90d16bfdb7ac3b6f0b3f169127929976df6cdbc52a174751b793a",
+    "analysis_source_sha256": "74588938882e39408c83c06c1bb983aff716d38fc3b70b824ff102936bb22589",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "interpretation_limits": [
+    "Finite 256 inputs per function, not all-input equivalence proof",
+    "Synthetic uint32 subset, not unrestricted C",
+    "Validation probe used sampling and a shorter generation budget; cannot isolate a performance change from its 70% rate",
+    "Further development informed by these test errors needs a fresh final test set"
+  ]
+}

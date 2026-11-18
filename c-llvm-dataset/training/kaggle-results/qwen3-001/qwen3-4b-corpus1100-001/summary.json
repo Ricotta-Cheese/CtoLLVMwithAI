@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "training_steps": 220,
+  "probe_count": 20,
+  "complete_outputs": 16,
+  "test_set_evaluated": false,
+  "native_accuracy": "pending local LLVM and stored-input evaluation"
+}

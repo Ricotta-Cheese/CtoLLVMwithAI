@@ -1,0 +1,1 @@
+{"category":"bitwise","compiled":true,"completed":true,"contract_passed":true,"execution_passed":true,"function_success":true,"generated_ir_sha256":"17e72213482e8c1e08cc51a40ccfadbc4c48ca0a1c2e7d9dd1f149a7f73bc735","id":"ext001-bitwise-125","input_count":256,"llvm_verified":true,"matching_inputs":256,"output_count":256,"stage":"passed"}

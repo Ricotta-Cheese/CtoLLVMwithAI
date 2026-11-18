@@ -1,0 +1,17 @@
+{
+  "accuracy_evaluation": "pending local LLVM and execution checks",
+  "base_complete_outputs": 7,
+  "best_checkpoint": "/kaggle/working/qwen-pilot-001/checkpoints/checkpoint-60",
+  "best_validation_loss": 0.018195047974586487,
+  "initial_validation_loss": 0.6761077642440796,
+  "model_id": "Qwen/Qwen2.5-Coder-1.5B",
+  "peak_gpu_memory_gib": 7.34473180770874,
+  "revision": "df3ce67c0e24480f20468b6ef2894622d69eb73b",
+  "status": "passed",
+  "test_set_evaluated": false,
+  "trainable_parameters": 9232384,
+  "training_seconds": 658.50898925,
+  "training_steps": 60,
+  "tuned_complete_outputs": 8,
+  "validation_functions": 10
+}

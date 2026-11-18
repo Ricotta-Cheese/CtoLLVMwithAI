@@ -1,0 +1,13 @@
+--- teacher.ll
++++ generated.ll
+@@ -39,8 +39,8 @@
+   %9 = load i32, ptr %acc, align 4
+   %10 = load i32, ptr %acc, align 4
+   %shl = shl i32 %10, 17
+-  %mul2 = mul i32 983040, %shl
+-  %xor3 = xor i32 -211419823, %mul2
++  %mul2 = mul i32 15, %shl
++  %xor3 = xor i32 -1000000000, %mul2
+   %xor4 = xor i32 %9, %xor3
+   store i32 %xor4, ptr %acc, align 4
+   %11 = load i32, ptr %acc, align 4

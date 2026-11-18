@@ -1,0 +1,327 @@
+{
+  "document_version": "v003",
+  "prepared_date": "2026-11-16",
+  "timezone": "Asia/Seoul",
+  "status": "specification_prepared_implementation_pending",
+  "scope_of_this_preparation": [
+    "implementation_specification",
+    "declarative_experiment_plan",
+    "existing_development_panel_selection",
+    "read_only_evidence_review"
+  ],
+  "new_code_generated": false,
+  "new_corpus_generated": false,
+  "new_training_started": false,
+  "new_model_inference_started": false,
+  "model": {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "baseline_adapter_sha256": "ceb001bb704984fad25159641437a042a882a6c3f7f1348aea017bdd695ac1a1",
+  "corpus_version_planned": "corpus-1100-v002",
+  "grammar_id": "uint32-mutable-args-v002",
+  "profile_id": "apple-arm64-cpu-separated-v002",
+  "target": "arm64-apple-macosx27.2.0",
+  "existing": {
+    "train": 880,
+    "validation_diagnostic_only": 110,
+    "test_diagnostic_only": 110
+  },
+  "new_data": {
+    "total": 2000,
+    "train": 1600,
+    "validation": 200,
+    "final_test": 200,
+    "train_by_category": {
+      "arithmetic": 240,
+      "bitwise": 320,
+      "branch": 160,
+      "loop": 240,
+      "combined": 640
+    },
+    "minimum_unit_rows_by_category": {
+      "arithmetic": 40,
+      "bitwise": 40,
+      "branch": 0,
+      "loop": 0,
+      "combined": 0
+    },
+    "minimum_mutable_argument_rows_by_category": {
+      "arithmetic": 40,
+      "bitwise": 40,
+      "branch": 20,
+      "loop": 20,
+      "combined": 40
+    },
+    "unit_and_mutable_rows_disjoint": true,
+    "rows_per_ast": 1,
+    "validation_by_category": {
+      "arithmetic": {
+        "iid": 30,
+        "family_ood": 10
+      },
+      "bitwise": {
+        "iid": 30,
+        "family_ood": 10
+      },
+      "branch": {
+        "iid": 30,
+        "family_ood": 10
+      },
+      "loop": {
+        "iid": 30,
+        "family_ood": 10
+      },
+      "combined": {
+        "iid": 30,
+        "family_ood": 10
+      }
+    },
+    "final_test_by_category": {
+      "arithmetic": {
+        "iid": 20,
+        "family_ood": 20
+      },
+      "bitwise": {
+        "iid": 20,
+        "family_ood": 20
+      },
+      "branch": {
+        "iid": 20,
+        "family_ood": 20
+      },
+      "loop": {
+        "iid": 20,
+        "family_ood": 20
+      },
+      "combined": {
+        "iid": 20,
+        "family_ood": 20
+      }
+    }
+  },
+  "combined_training_rows": 2480,
+  "family_catalog": {
+    "status": "implementation_preflight_pending",
+    "key": "category + control_flow + ordered_write_targets_and_read_roles + return_read_roles",
+    "excluded_from_key": [
+      "constant_values",
+      "arithmetic_operators",
+      "expression_internal_tree_shape"
+    ],
+    "ood_disjoint_from": [
+      "all_existing_1100",
+      "new_train",
+      "other_ood_partition"
+    ],
+    "minimum_ood_families_per_category_per_partition": 2,
+    "maximum_dev_ood_rows_per_family": 5,
+    "maximum_final_ood_rows_per_family": 10,
+    "freeze_before_candidate_generation": true
+  },
+  "grammar_constraints": {
+    "mutable_variables": [
+      "x",
+      "y",
+      "acc"
+    ],
+    "mutable_x_y_inside_loop": false,
+    "loop_index_read_only": true,
+    "max_iterations": 16,
+    "shift_min": 0,
+    "shift_max": 31,
+    "direct_return_expression": true
+  },
+  "training": {
+    "seed": 20261113,
+    "data_seed": 20261113,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear",
+    "learning_rate": 0.0001,
+    "quantization": "NF4 double",
+    "compute_dtype": "FP16",
+    "micro_batch": 1,
+    "gradient_accumulation": 4,
+    "scheduler": "cosine",
+    "max_prompt_completion_eos_tokens": 4096,
+    "truncate": false,
+    "checkpoint_selection": "fixed_terminal_step",
+    "new_adapter_initialization": "locked_base_model",
+    "requirements": "training/qwen_requirements.txt"
+  },
+  "experiments": [
+    {
+      "id": "B0",
+      "rows": 880,
+      "additional_optimizer_steps": 0,
+      "adapter": "frozen_existing"
+    },
+    {
+      "id": "B1",
+      "rows": 880,
+      "optimizer_steps": 220,
+      "warmup_steps": 11,
+      "resume_save_every_steps": 55,
+      "generation_checkpoint_steps": [
+        220
+      ],
+      "profile": "apple-arm64-cpu-separated-v002"
+    },
+    {
+      "id": "B2",
+      "rows": 2480,
+      "optimizer_steps": 620,
+      "warmup_steps": 31,
+      "resume_save_every_steps": 155,
+      "generation_checkpoint_steps": [
+        620
+      ],
+      "profile": "B1_profile_if_adopted_else_explicit_v1_alternative"
+    }
+  ],
+  "b1_adoption": {
+    "teacher_roundtrip_required": 1100,
+    "forbidden_cpu_attribute_reemissions": 0,
+    "old_25_system_net_success_minimum": 0,
+    "median_generated_token_reduction_required": true,
+    "paired_regressions_require_review": true,
+    "accuracy_improvement_required": false
+  },
+  "development_panel": {
+    "total": 50,
+    "old_validation_by_category": {
+      "arithmetic": [
+        "arithmetic-007",
+        "arithmetic-017",
+        "ext001-arithmetic-014",
+        "ext001-arithmetic-093",
+        "ext001-arithmetic-110"
+      ],
+      "bitwise": [
+        "bitwise-015",
+        "bitwise-016",
+        "ext001-bitwise-066",
+        "ext001-bitwise-165",
+        "ext001-bitwise-017"
+      ],
+      "branch": [
+        "branch-017",
+        "branch-018",
+        "ext001-branch-086",
+        "ext001-branch-161",
+        "ext001-branch-027"
+      ],
+      "loop": [
+        "loop-005",
+        "loop-018",
+        "ext001-loop-007",
+        "ext001-loop-198",
+        "ext001-loop-013"
+      ],
+      "combined": [
+        "combined-010",
+        "combined-019",
+        "ext001-combined-113",
+        "ext001-combined-162",
+        "ext001-combined-170"
+      ]
+    },
+    "old_count": 25,
+    "new_count": 25,
+    "new_per_category": {
+      "iid": 3,
+      "family_ood": 2
+    },
+    "new_id_selection": "SHA256(v003-panel: + id), ascending within category and evaluation stratum",
+    "initial_evaluation": "B0 and B1 old25",
+    "completion": "B0 and B1 new25; B2 all50",
+    "total_planned_inferences": 150,
+    "speed_pilot": "longest_reference_completion_in_each_category_of_old25; reuse completed_predictions"
+  },
+  "development_selection": {
+    "primary": "system_execution_success",
+    "tie_breakers": [
+      "combined_success_count",
+      "lower_median_generated_tokens"
+    ],
+    "promising_total_net_gain": 5,
+    "promising_combined_net_gain": 2,
+    "category_net_loss_investigation_threshold": 2,
+    "max_generation_checkpoints_per_candidate": 1
+  },
+  "inference": {
+    "backend": "HF NF4 base + adapter",
+    "batch": 1,
+    "num_beams": 1,
+    "do_sample": false,
+    "use_model_defaults": false,
+    "max_new_tokens": 4096,
+    "max_seconds_per_function": 600,
+    "candidates": 1
+  },
+  "input_policy": {
+    "development_primary": 256,
+    "final_minimum": 1024,
+    "final_auxiliary": 256,
+    "base_edges": 64,
+    "base_random": 192,
+    "final_contains_base": true,
+    "freeze_extended_inputs_before_predictions": true,
+    "mutation_diagnostics": "development_only"
+  },
+  "reported_metrics": [
+    "raw_execution_success",
+    "profile_contract_passed",
+    "raw_strict_function_success",
+    "system_execution_success",
+    "local_sha_allowed_success"
+  ],
+  "final_comparison": {
+    "models": [
+      "frozen_B0",
+      "one_frozen_selected_candidate"
+    ],
+    "functions_per_model": 200,
+    "final_test_selection": false,
+    "directional_targets": {
+      "overall": 0.75,
+      "combined": 0.55
+    }
+  },
+  "planning_wall_clock_caps_hours": {
+    "B1_training": 3,
+    "B2_training": 7,
+    "all_development_inference": 5,
+    "development_total": 15,
+    "separate_final_inference": 14
+  },
+  "planning_assumptions": {
+    "inference_gpus": 2,
+    "gpu_type_reference": "T4",
+    "historical_seconds_per_function": 212.1,
+    "ideal_development_hours": 4.41875,
+    "ideal_final_hours": 11.783333333333333,
+    "live_quota_verified": false,
+    "new_max_length_memory_verified": false,
+    "meaning": "wall_time_planning_not_billed_gpu_hours"
+  },
+  "pending_implementation_gates": [
+    "profile_transformer_and_1100_roundtrip",
+    "versioned_evaluator_and_regression_tests",
+    "official_tokenizer_crosscheck",
+    "family_catalog_and_feasibility_freeze",
+    "new_2000_rows_full_validation",
+    "train_dev_only_payload_and_hashes",
+    "longest_batch_optimizer_step_smoke",
+    "live_gpu_quota_session_and_speed_check",
+    "candidate_and_final_policy_freeze"
+  ],
+  "documents": {
+    "preparation": "docs/NEXT_TRAINING_PREPARATION.md",
+    "implementation_spec": "docs/NEXT_TRAINING_CODEGEN_SPEC.md",
+    "source_proposal": "docs/NEXT_TRAINING_PROPOSAL.md",
+    "evidence": "training/proposals/v003/preparation-evidence.json"
+  }
+}

@@ -1,0 +1,35 @@
+--- teacher.ll
++++ generated.ll
+@@ -26,7 +26,7 @@
+   %7 = load i32, ptr %x.addr, align 4
+   %add2 = add i32 %7, 0
+   %8 = load i32, ptr %x.addr, align 4
+-  %add3 = add i32 -1929013219, %8
++  %add3 = add i32 -2365954077, %8
+   %sub = sub i32 %add2, %add3
+   %mul4 = mul i32 %6, %sub
+   store i32 %mul4, ptr %acc, align 4
+@@ -42,15 +42,16 @@
+   %14 = load i32, ptr %y.addr, align 4
+   %mul8 = mul i32 %13, %14
+   %15 = load i32, ptr %y.addr, align 4
+-  %mul9 = mul i32 %mul8, %15
++  %mul9 = mul i32 %15, %14
++  %mul10 = mul i32 %mul8, %mul9
+   %16 = load i32, ptr %x.addr, align 4
+-  %sub10 = sub i32 15, %16
++  %sub11 = sub i32 15, %16
+   %17 = load i32, ptr %acc, align 4
+-  %add11 = add i32 %17, 3
+-  %mul12 = mul i32 %sub10, %add11
+-  %mul13 = mul i32 %mul9, %mul12
+-  %mul14 = mul i32 %12, %mul13
+-  store i32 %mul14, ptr %acc, align 4
++  %add12 = add i32 %17, 3
++  %mul13 = mul i32 %sub11, %add12
++  %mul14 = mul i32 %mul10, %mul13
++  %mul15 = mul i32 %12, %mul14
++  store i32 %mul15, ptr %acc, align 4
+   %18 = load i32, ptr %acc, align 4
+   ret i32 %18
+ }

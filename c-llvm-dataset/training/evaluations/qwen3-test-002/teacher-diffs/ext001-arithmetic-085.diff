@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -39,7 +39,7 @@
+   %mul6 = mul i32 %11, %sub5
+   store i32 %mul6, ptr %acc, align 4
+   %14 = load i32, ptr %acc, align 4
+-  %add7 = add i32 %14, -3
++  %add7 = add i32 %14, -2
+   store i32 %add7, ptr %acc, align 4
+   %15 = load i32, ptr %acc, align 4
+   ret i32 %15

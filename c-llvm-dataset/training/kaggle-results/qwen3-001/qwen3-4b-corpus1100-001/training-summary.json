@@ -1,0 +1,21 @@
+{
+  "status": "training_complete",
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "steps": 220,
+  "training_seconds": 8237.972984926,
+  "trainable_parameters": 16515072,
+  "initial_validation_loss": 0.7523650527000427,
+  "best_validation_loss": 0.00444857869297266,
+  "best_checkpoint": "/kaggle/working/qwen3-4b-corpus1100-001/checkpoints/checkpoint-220",
+  "peak_gpu_allocated_gib": 11.284871101379395,
+  "train_metrics": {
+    "train_runtime": 8237.3763,
+    "train_samples_per_second": 0.107,
+    "train_steps_per_second": 0.027,
+    "total_flos": 3.136860950880461e+16,
+    "train_loss": 0.048418200693347235,
+    "epoch": 1.0
+  },
+  "test_set_evaluated": false
+}

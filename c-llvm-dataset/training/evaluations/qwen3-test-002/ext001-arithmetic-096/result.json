@@ -1,0 +1,1 @@
+{"category":"arithmetic","compiled":true,"completed":true,"contract_passed":true,"execution_passed":true,"function_success":true,"generated_ir_sha256":"ff1fd071eb9e1b0692e7f5a2da018a3d8e00eb5312adae2611488d7cf29279af","id":"ext001-arithmetic-096","input_count":256,"llvm_verified":true,"matching_inputs":256,"output_count":256,"stage":"passed"}

@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -30,7 +30,7 @@
+   %xor3 = xor i32 %4, %and2
+   store i32 %xor3, ptr %acc, align 4
+   %9 = load i32, ptr %acc, align 4
+-  %xor4 = xor i32 %9, -645306592
++  %xor4 = xor i32 %9, 1838716530
+   store i32 %xor4, ptr %acc, align 4
+   %10 = load i32, ptr %acc, align 4
+   %11 = load i32, ptr %y.addr, align 4

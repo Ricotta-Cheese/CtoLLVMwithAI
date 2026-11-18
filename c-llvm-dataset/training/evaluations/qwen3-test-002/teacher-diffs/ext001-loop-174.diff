@@ -1,0 +1,15 @@
+--- teacher.ll
++++ generated.ll
+@@ -34,9 +34,9 @@
+ for.body:                                         ; preds = %for.cond
+   %7 = load i32, ptr %acc, align 4
+   %8 = load i32, ptr %acc, align 4
+-  %add2 = add i32 -1, %8
+-  %xor = xor i32 %7, %add2
+-  store i32 %xor, ptr %acc, align 4
++  %xor = xor i32 -1, %8
++  %xor2 = xor i32 %7, %xor
++  store i32 %xor2, ptr %acc, align 4
+   %9 = load i32, ptr %acc, align 4
+   %10 = load i32, ptr %y.addr, align 4
+   %11 = load i32, ptr %y.addr, align 4

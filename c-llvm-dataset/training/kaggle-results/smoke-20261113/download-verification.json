@@ -1,0 +1,42 @@
+{
+  "all_weights_finite": true,
+  "files": {
+    "checkpoint-latest.pt": {
+      "bytes": 327187227,
+      "sha256": "42f03b2839e6812e461ad7bf5c4c08b90dc027abab3271efd09701669ac08b53"
+    },
+    "environment.json": {
+      "bytes": 244,
+      "sha256": "d093a98afd821dcf933b3a60ecdab9607b72da291cbf7e82dcbcd71273dad40c"
+    },
+    "metrics.json": {
+      "bytes": 2246,
+      "sha256": "93169b518909b62ff9915a077ba4abf0e29c1be6fefa10571bf196d6f6632d76"
+    },
+    "model.pt": {
+      "bytes": 109045219,
+      "sha256": "3afcb40b0e033736894511407d1143d431f554bcafd05fc02f84a6574c01d7ba"
+    },
+    "run-spec.json": {
+      "bytes": 2865,
+      "sha256": "fb49e4dce7fea668a6f242689f80b226f9ab39d0c63ffdb5db6d7f4481d814ce"
+    },
+    "splits.json": {
+      "bytes": 1958,
+      "sha256": "4a624a365f7e495af487e4a14475c3769f82fa71545a65a045a6ac578f8fdd0f"
+    },
+    "summary.json": {
+      "bytes": 865,
+      "sha256": "9a927ac1fa6ad6a235c3e1bde16dbee2be6917f7cd7ab6e9bfdf0e2e15b14040"
+    },
+    "tokenizer.json": {
+      "bytes": 47084,
+      "sha256": "c30ecd8ee98b50225f74cb086a88f38de268a1958e02e8605623ecb63ed97eb1"
+    }
+  },
+  "model_matches_checkpoint": true,
+  "optimizer_step": 20,
+  "parameter_count": 27253760,
+  "status": "passed",
+  "strict_weight_load": true
+}

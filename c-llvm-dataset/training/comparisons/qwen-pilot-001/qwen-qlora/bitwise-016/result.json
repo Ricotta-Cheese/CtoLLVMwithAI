@@ -1,0 +1,1 @@
+{"category":"bitwise","compiled":true,"completed":true,"contract_passed":true,"execution_passed":true,"function_success":true,"generated_ir_sha256":"0f4428dc0ebc74578c87e1031755b5be14b6ae27731650a5f07c6f11f642099a","id":"bitwise-016","input_count":256,"llvm_verified":true,"matching_inputs":256,"output_count":256,"stage":"passed"}

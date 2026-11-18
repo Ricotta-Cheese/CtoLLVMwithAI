@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tokens": 3455,
+  "loss": 0.43890976905822754,
+  "seconds": 22.946871722000026,
+  "peak_allocated_gib": 10.552439212799072,
+  "gpu_total_gib": 14.56219482421875,
+  "weights_updated": false
+}

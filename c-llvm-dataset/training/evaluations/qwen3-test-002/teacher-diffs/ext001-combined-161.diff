@@ -1,0 +1,50 @@
+--- teacher.ll
++++ generated.ll
+@@ -95,7 +95,7 @@
+   %xor17 = xor i32 %25, %26
+   %and18 = and i32 %xor17, 134217728
+   %cmp19 = icmp eq i32 %and18, 0
+-  br i1 %cmp19, label %if.then20, label %if.else24
++  br i1 %cmp19, label %if.then20, label %if.else23
+ 
+ if.then20:                                        ; preds = %for.end
+   %27 = load i32, ptr %acc, align 4
+@@ -106,26 +106,24 @@
+   %shr = lshr i32 %sub22, 20
+   %xor23 = xor i32 %27, %shr
+   store i32 %xor23, ptr %acc, align 4
+-  br label %if.end30
++  br label %if.end25
+ 
+-if.else24:                                        ; preds = %for.end
++if.else23:                                        ; preds = %for.end
+   %30 = load i32, ptr %acc, align 4
+   %31 = load i32, ptr %y.addr, align 4
+-  %shl25 = shl i32 %31, 13
+-  %xor26 = xor i32 %30, %shl25
+-  store i32 %xor26, ptr %acc, align 4
++  %shl24 = shl i32 %31, 13
++  %xor25 = xor i32 %30, %shl24
++  store i32 %xor25, ptr %acc, align 4
+   %32 = load i32, ptr %acc, align 4
+   %33 = load i32, ptr %acc, align 4
++  %add26 = add i32 %33, 2
++  %xor27 = xor i32 %32, %add26
++  store i32 %xor27, ptr %acc, align 4
++  br label %if.end25
++
++if.end25:                                         ; preds = %if.else23, %if.then20
+   %34 = load i32, ptr %acc, align 4
+-  %or27 = or i32 2, %34
+-  %add28 = add i32 %33, %or27
+-  %xor29 = xor i32 %32, %add28
+-  store i32 %xor29, ptr %acc, align 4
+-  br label %if.end30
+-
+-if.end30:                                         ; preds = %if.else24, %if.then20
+-  %35 = load i32, ptr %acc, align 4
+-  ret i32 %35
++  ret i32 %34
+ }
+ 
+ attributes #0 = { noinline nounwind optnone ssp uwtable(sync) "frame-pointer"="non-leaf" "no-trapping-math"="true" "probe-stack"="__chkstk_darwin" "stack-protector-buffer-size"="8" "target-cpu"="apple-m1" "target-features"="+aes,+altnzcv,+bti,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8.5a,+v8a" }

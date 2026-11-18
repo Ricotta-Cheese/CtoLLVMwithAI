@@ -1,0 +1,2 @@
+# Colab의 CUDA용 PyTorch는 유지합니다. 새 가중치와 자체 학습 루프를 사용합니다.
+tokenizers==0.22.2

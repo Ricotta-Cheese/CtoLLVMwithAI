@@ -1,0 +1,11 @@
+--- teacher.ll
++++ generated.ll
+@@ -21,7 +21,7 @@
+   %5 = load i32, ptr %acc, align 4
+   %6 = load i32, ptr %x.addr, align 4
+   %xor = xor i32 %5, %6
+-  %or = or i32 %xor, 219
++  %or = or i32 %xor, 15
+   %7 = load i32, ptr %x.addr, align 4
+   %8 = load i32, ptr %y.addr, align 4
+   %xor1 = xor i32 %7, %8

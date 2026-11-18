@@ -1,0 +1,8 @@
+{
+  "checkpoint_step": 175,
+  "ended_with_eos": false,
+  "generated_ir": "; ModuleID = 'source.c'\nsource_filename = \"source.c\"\ntarget datalayout = \"e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-S128-Fn32\"\ntarget triple = \"arm64-apple-macosx27.2.0\"\n\n\n\ndefine i32\"\ndefine i32 @compute(i32 @compute(i32 noundef %x, i32 noundef %x, i32 noundef %x.addr = alloca i32, align",
+  "generated_tokens": 128,
+  "id": "arithmetic-017",
+  "limit_reached": true
+}

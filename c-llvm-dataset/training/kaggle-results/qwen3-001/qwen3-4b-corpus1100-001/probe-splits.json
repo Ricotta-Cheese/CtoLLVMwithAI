@@ -1,0 +1,24 @@
+{
+  "validation": [
+    "arithmetic-017",
+    "arithmetic-007",
+    "bitwise-016",
+    "bitwise-015",
+    "branch-018",
+    "branch-017",
+    "combined-010",
+    "combined-019",
+    "loop-018",
+    "loop-005",
+    "ext001-arithmetic-093",
+    "ext001-arithmetic-014",
+    "ext001-bitwise-165",
+    "ext001-bitwise-066",
+    "ext001-branch-086",
+    "ext001-branch-161",
+    "ext001-combined-113",
+    "ext001-combined-162",
+    "ext001-loop-198",
+    "ext001-loop-007"
+  ]
+}
