@@ -1,0 +1,86 @@
+# Qwen3 동결 시험 세트 평가
+
+학습 완료된 Qwen3-4B-Instruct-2507 adapter를 고정하고 시험 110함수를 처음 평가하는 작업입니다. 추가 학습, 정답 기반 수정, 재시도는 하지 않습니다.
+
+작업: https://www.kaggle.com/code/ritaainsworth/magicompile-qwen3-test110-002
+
+- 학습 작업 version 1의 adapter SHA-256을 확인하고 불일치 시 중단합니다.
+- 코퍼스 `splits.json`의 시험 110 ID를 그대로 사용합니다. 추론 payload에는 ID·분류·입력 프롬프트만 있으며 정답 IR·기대 실행값은 넣지 않습니다.
+- T4 두 개에서 서로 다른 함수를 나누어 추론합니다. GPU가 하나뿐이면 하나로 실행합니다.
+- greedy 한 후보, 최대 4,096토큰 / 600초, 원문 보존. 실패도 전체 110함수 분모에 포함합니다.
+- 기존 검증 probe는 3,072토큰 / 300초였으므로 시험 결과와 그 수치를 동일 조건의 비교로 해석하지 않습니다. 긴 생성의 시간 초과를 줄이기 위해 시험 전에 제한을 고정했습니다.
+- Kaggle에서는 추론을 수행합니다. 데이터가 Apple ARM64 타깃이므로 원문 IR의 컴파일·실행 일치는 기존 잠금 환경의 로컬 Apple Clang으로 확인합니다. Linux 타깃으로 수정하지 않습니다.
+- 이 시험 결과를 향후 학습·모델 선택에 사용하면 해당 시험 세트가 개발용으로 노출된 것으로 취급하고, 새 최종 시험 세트를 마련해야 합니다.
+
+프로젝트 `c-llvm-dataset`에서 상태와 결과를 확인합니다.
+
+```bash
+kaggle kernels status ritaainsworth/magicompile-qwen3-test110-002
+kaggle kernels output ritaainsworth/magicompile-qwen3-test110-002 -p training/kaggle-results/qwen3-test-002
+python3.14 training/evaluate_generated_ir.py \
+  training/kaggle-results/qwen3-test-002/qwen3-test110-002/test-predictions.jsonl \
+  --artifacts corpus-1100-v001 \
+  --splits training/kaggle-results/qwen3-test-002/qwen3-test110-002/splits.json \
+  --split test --output training/evaluations/qwen3-test-002
+```
+
+시험 평가기는 시험 분할 전체를 평가하도록 검사하며, 누락된 예측은 거부합니다. 결과에서 생성 완료·LLVM 검증·컴파일·각 256입력의 동작 일치를 구분합니다.
+
+현재 상태: `test110-002` version 1은 COMPLETE로 정상 종료됐고, 원문 IR의 로컬 실행 평가까지 완료했습니다. 시험 함수 성공은 72/110, 65.5%입니다.
+
+최초 시험용 작업 `test110-001`은 라이브러리의 생성 기본값 덮어쓰기 문제로 폐기했습니다. 그 출력은 시험 점수에 사용하지 않습니다. 수정한 `test110-002`는 `use_model_defaults=False`와 직접 지정한 `do_sample=False`로 greedy를 강제합니다. 시험 정답·점수에 따라 수정한 것은 아닙니다.
+
+
+## 완료 결과와 로그 분석
+
+Kaggle 추론은 약 **3시간 20분 11초**에 정상 종료됐습니다. T4 두 개의 독립 worker가 각각 55함수를 처리했습니다. 두 worker의 최대 할당 GPU 메모리는 각각 3.746GiB였습니다. 함수당 생성 시간은 평균 212.1초, 중앙값 189.6초, 최대 415.9초였습니다. worker 시간 합계 6시간 28분 52초는 병렬 추론의 작업량 합계이며 실제 경과 시간과 다릅니다.
+
+110함수 모두 EOS까지 생성됐으며, 600초 시간 초과·4,096토큰 상한 도달·메모리 부족은 없었습니다. 로그의 생성 완료 이벤트 110개와 최종 예측 ID를 대조했습니다. 예전의 모델 기본값 병합 경고도 없었고, 고정된 수정 소스에서 greedy를 강제했습니다. TensorFlow의 CUDA 탐색 경고, bitsandbytes API FutureWarning, notebook HTML 변환의 SyntaxWarning은 있었지만 Torch GPU 추론은 끝까지 정상 실행됐습니다.
+
+내려받은 시험 설정과 로컬 고정 설정, adapter SHA-256, 분할, 입력 프롬프트 해시, 예측 파일 해시를 확인했습니다. 원본 두 데이터셋과 합본 코퍼스의 manifest에도 추가·누락·변경 파일이 없었습니다. Kaggle 결과의 `native_execution_evaluated: false`는 추론 작업 당시 상태이며, 이후 잠긴 로컬 Apple Clang 환경에서 실행 평가를 완료했습니다.
+
+| 평가 단계 | 통과 / 전체 | 비율 |
+|---|---:|---:|
+| EOS까지 생성 완료 | 110 / 110 | 100.0% |
+| LLVM 구조 검증 | 108 / 110 | 98.2% |
+| 지원 범위 검사 및 컴파일 | 108 / 110 | 98.2% |
+| 각 함수의 256입력 모두 동작 일치 | **72 / 110** | **65.5%** |
+
+총 28,160개 저장 입력 사례를 평가 프로토콜에 포함합니다. LLVM 검증 실패 2함수는 실행할 수 없어 최종 실패로 계산했습니다. 생성 IR을 수정하거나 Linux 타깃으로 변환하지 않았습니다.
+
+| 분류 | LLVM 검증 | 모든 입력 동작 일치 | 함수 성공률 |
+|---|---:|---:|---:|
+| arithmetic | 22 / 22 | 16 / 22 | 72.7% |
+| bitwise | 21 / 22 | 16 / 22 | 72.7% |
+| branch | 22 / 22 | 17 / 22 | 77.3% |
+| loop | 21 / 22 | 15 / 22 | 68.2% |
+| combined | 22 / 22 | **8 / 22** | **36.4%** |
+
+## 오답 분석
+
+실패는 **컴파일 전 LLVM 오류 2개 + 컴파일되지만 동작이 다른 36개**입니다. 출력 시간 부족은 이번 실패 원인이 아닙니다.
+
+- `loop-017`: 정의하지 않은 `%i.addr` 사용.
+- `ext001-bitwise-178`: PHI가 아닌 `and` 명령이 자기 자신의 `%and9`를 참조.
+- 실행 오답 36개 중 16개는 주석을 제외한 함수 본문에서 숫자 리터럴만 달랐습니다. 예를 들어 `bitwise-007`은 `or ... 219`를 `or ... 15`로, `ext001-branch-047`은 `sub ... 7`을 `sub ... 8`로 생성했습니다.
+- 나머지 20개는 명령 또는 피연산자 구조도 달랐습니다. 예를 들어 `ext001-loop-174`는 `add i32 -1, ...`를 `xor i32 -1, ...`로 바꿨고, `ext001-bitwise-190`은 누적값과 XOR하는 명령을 누락했습니다.
+
+숫자만 다른지의 분류는 SSA 이름과 명령 구조를 그대로 비교하고 숫자 리터럴만 마스킹한 휴리스틱입니다. 엄밀한 오류 원인 증명은 아니며, 여러 오류가 함께 있는 사례도 있습니다. 실패 38개의 teacher/generated 원문 diff와 첫 실행 반례를 보존했습니다.
+
+제 판단은 **LLVM 문법 생성은 상당히 학습됐지만 상수·연산·데이터 흐름을 정확히 보존하는 능력이 부족하다**는 것입니다. 특히 combined의 14오답은 모두 LLVM 검증과 컴파일을 통과했습니다. 문법 검증만으로 이 모델을 컴파일러처럼 신뢰할 수 없다는 직접적인 사례입니다. 토큰 단위 검증 loss 0.004449가 낮아도, 상수 하나나 연산 하나가 바뀌면 함수 전체의 실행 결과가 달라집니다.
+
+## 다음 개선의 우선순위
+
+1. 개발용 validation과 이번 오답 유형을 참고해 32비트 상수 변환·상수식 계산·비트 시프트·누적 연산 보존 데이터를 보강합니다. 정답 IR의 단순 복사뿐 아니라 C 수식에서 필요한 상수 계산이 맞는지 확인하는 것이 중요합니다.
+2. 반복문 안 분기 및 반복문 이후 분기를 포함하는 combined 구조의 다양성을 늘립니다. 이 분류의 36.4%가 가장 뚜렷한 취약점입니다.
+3. 다음 학습 실험은 동일 greedy·동일 생성 제한의 validation 실행 일치율로 선택합니다. 시험 오류를 본 뒤 개선한 모델의 최종 성능은 새로운 미노출 시험 세트로 확인합니다.
+
+이번 시험 65.5%와 이전 validation probe 70%는 **분할·표본 수·생성 방식·생성 제한이 달라 직접적인 성능 상승/하락 비교가 아닙니다**. 또한 이번 결과는 합성 uint32 함수와 함수별 유한 256입력에 한정됩니다. 일반 C 전체의 정확도나 모든 입력에서의 동등성 증명을 뜻하지 않습니다.
+
+## 보존한 결과
+
+- 원본 로그·110개 예측·원격 설정: `training/kaggle-results/qwen3-test-002/`.
+- 함수별 LLVM 검증, 컴파일, 실행 반례: `training/evaluations/qwen3-test-002/report.json`.
+- 분류별 집계, 로그·입력·adapter 해시 검사, 오류 분류: `training/evaluations/qwen3-test-002/analysis.json`.
+- 실패 원문 비교: `training/evaluations/qwen3-test-002/teacher-diffs/`.
+- 분석 재실행: `python3.14 training/analyze_qwen3_test.py`.
