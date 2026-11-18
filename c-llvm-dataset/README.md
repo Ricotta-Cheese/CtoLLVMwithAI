@@ -34,6 +34,8 @@ Qwen2.5-Coder-1.5B도 QLoRA로 60 step 학습해 비교했습니다. 같은 검�
 
 기본 파일럿의 시드 `20261113`과 분류별 수량은 [config.json](config.json)에, 확장 설정은 [config-ext001.json](config-ext001.json)에 기록되어 있습니다.
 
+무작위 C 코드 생성기를 작성하는 데 [Claude Sonnet 5.5](https://www.anthropic.com/claude/sonnet)를 사용했습니다. 데이터셋의 C 함수는 저장소의 Python 생성기가 고정 시드로 재현할 수 있게 생성합니다.
+
 ### 기본 파일럿의 생성 규칙
 
 함수 서명은 `unsigned int compute(unsigned int x, unsigned int y)`이며 `unsigned int`가 정확히 32비트인지 C 정적 단언으로 검사합니다. 모든 상수는 `u` 접미사를 사용하고, 각 연산의 부호 없는 정수 wraparound를 Python 해석기에서도 재현합니다. 시프트는 0~31의 상수이고, 반복 횟수는 `(x & 15u) + (y & 1u)`이므로 최대 16회입니다. 포인터·배열·실수·재귀·외부 함수·나눗셈은 생성하지 않습니다.
