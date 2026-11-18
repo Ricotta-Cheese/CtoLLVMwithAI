@@ -1,0 +1,12 @@
+_Static_assert(sizeof(unsigned int) * __CHAR_BIT__ == 32, "requires uint32");
+unsigned int compute(unsigned int x, unsigned int y) {
+    (void)x;
+    (void)y;
+    unsigned int acc = (x * y);
+    for (unsigned int i = 0u; i < ((x & 15u) + (y & 1u)); ++i) {
+        acc = (acc ^ (0u << 21u));
+        acc = (acc ^ ((x >> 27u) >> 19u));
+        acc = (acc ^ ((16u ^ 7u) + (acc ^ x)));
+    }
+    return acc;
+}
