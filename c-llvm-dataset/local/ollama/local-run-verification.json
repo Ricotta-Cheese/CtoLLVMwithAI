@@ -1,0 +1,35 @@
+{
+  "download": "complete",
+  "base_sha256_verification": "passed; see base-download-manifest.json",
+  "adapter_merge": "passed",
+  "ollama_model": "magicompile-qwen3:4b",
+  "ollama_model_id": "7179f4ead0cf",
+  "precision": "F16",
+  "runner": "mlx",
+  "ollama_store_independent_of_temporary_weights": true,
+  "generation_completed": true,
+  "generation_tokens": 589,
+  "generation_total_seconds": 36.7315065,
+  "memory_release": {
+    "requested": true,
+    "confirmed": true
+  },
+  "strict_pipeline_passed": false,
+  "strict_pipeline_error": "clang 실패 (0): '+sha' is not a recognized feature for this target (ignoring feature)\n'+sha' is not a recognized feature for this target (ignoring feature)",
+  "smoke_report": "../LocalTestPipeline/outputs/20261116_124141_add_726ee9/report.json",
+  "note": "Raw model output preserved; no fixes or warning suppression applied.",
+  "temporary_weight_cleanup": [
+    {
+      "path": "/private/tmp/magicompile-ollama-build/base",
+      "logical_bytes": 8060908782
+    },
+    {
+      "path": "/private/tmp/magicompile-ollama-build/merged",
+      "logical_bytes": 8060907970
+    },
+    {
+      "path": "/private/tmp/magicompile-ollama-build/download-parts",
+      "logical_bytes": 0
+    }
+  ]
+}

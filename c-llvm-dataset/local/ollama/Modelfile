@@ -1,0 +1,15 @@
+FROM /private/tmp/magicompile-ollama-build/merged
+PARAMETER temperature 0
+PARAMETER seed 20261113
+PARAMETER num_ctx 8192
+PARAMETER num_predict 4096
+PARAMETER repeat_penalty 1
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+SYSTEM """Translate the provided C function to a complete LLVM IR module for the specified target. Return only LLVM IR, without Markdown fences or explanations."""
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ range .Messages }}{{ if ne .Role "system" }}<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}{{ end }}<|im_start|>assistant
+{{ .Response }}"""
