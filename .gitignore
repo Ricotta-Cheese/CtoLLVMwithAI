@@ -1,0 +1,25 @@
+# OS and Python-generated files
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# Run logs and model artifacts
+*.log
+*.safetensors
+*.gguf
+*.pt
+*.pth
+checkpoint-*/
+/c-llvm-dataset/training/kaggle-results/qwen3-001/qwen3-4b-corpus1100-001/adapter-best/
+
+# Local Ollama run metadata
+/c-llvm-dataset/local/ollama/download-status.json

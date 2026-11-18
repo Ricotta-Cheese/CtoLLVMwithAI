@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "seed": 20261114,
+  "id_prefix": "ext001-",
+  "reference_datasets": ["artifacts"],
+  "categories": {
+    "arithmetic": 200,
+    "bitwise": 200,
+    "branch": 200,
+    "loop": 200,
+    "combined": 200
+  },
+  "edge_values": [0, 1, 2, 15, 16, 2147483647, 2147483648, 4294967295],
+  "random_inputs": 192,
+  "max_witness_search": 4096,
+  "max_attempts_per_category": 2000,
+  "max_loop_iterations": 16,
+  "timeout_seconds": 20
+}

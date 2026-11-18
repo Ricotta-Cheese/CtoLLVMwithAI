@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "seed": 20261113,
+  "categories": {
+    "arithmetic": 20,
+    "bitwise": 20,
+    "branch": 20,
+    "loop": 20,
+    "combined": 20
+  },
+  "edge_values": [0, 1, 2, 15, 16, 2147483647, 2147483648, 4294967295],
+  "random_inputs": 192,
+  "max_witness_search": 4096,
+  "max_attempts_per_category": 200,
+  "max_loop_iterations": 16,
+  "timeout_seconds": 20
+}
