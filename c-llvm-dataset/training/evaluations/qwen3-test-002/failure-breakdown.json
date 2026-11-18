@@ -1,0 +1,430 @@
+{
+  "execution_failures": 36,
+  "by_category": {
+    "arithmetic": {
+      "instruction_or_operand_structure_differences": 3,
+      "only_numeric_literal_differences": 3
+    },
+    "bitwise": {
+      "only_numeric_literal_differences": 3,
+      "instruction_or_operand_structure_differences": 2,
+      "llvm_verify_failed": 1
+    },
+    "branch": {
+      "only_numeric_literal_differences": 5
+    },
+    "loop": {
+      "only_numeric_literal_differences": 5,
+      "llvm_verify_failed": 1,
+      "instruction_or_operand_structure_differences": 1
+    },
+    "combined": {
+      "instruction_or_operand_structure_differences": 14
+    }
+  },
+  "involves_folded_constant": 19,
+  "matching_inputs": {
+    "zero": 6,
+    "at_least_half": 14,
+    "at_least_200": 2,
+    "of": 256
+  },
+  "heuristic": "\"Folded constant\" heuristic: a numeric literal that appears in the teacher IR lines removed by the diff, is missing from the generated lines, and whose uint32 value is not written as a `<n>u` literal in the C source. Such values exist only because Clang evaluates constant subexpressions even at -O0, so the model has to compute them. This is a heuristic description, not a proof of cause.",
+  "functions": [
+    {
+      "id": "bitwise-007",
+      "category": "bitwise",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 95,
+      "missing_teacher_literals": [
+        219
+      ],
+      "folded_constants": [
+        219
+      ]
+    },
+    {
+      "id": "combined-003",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 211,
+      "missing_teacher_literals": [
+        1,
+        525539601
+      ],
+      "folded_constants": [
+        525539601
+      ]
+    },
+    {
+      "id": "combined-011",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 27,
+      "missing_teacher_literals": [
+        1,
+        8192
+      ],
+      "folded_constants": [
+        8192
+      ]
+    },
+    {
+      "id": "loop-011",
+      "category": "loop",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 23,
+      "missing_teacher_literals": [
+        -453158017
+      ],
+      "folded_constants": [
+        -453158017
+      ]
+    },
+    {
+      "id": "ext001-arithmetic-041",
+      "category": "arithmetic",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 1,
+      "missing_teacher_literals": [
+        -9
+      ],
+      "folded_constants": [
+        -9
+      ]
+    },
+    {
+      "id": "ext001-arithmetic-130",
+      "category": "arithmetic",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 23,
+      "missing_teacher_literals": [
+        -1929013219
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-arithmetic-085",
+      "category": "arithmetic",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        -3
+      ],
+      "folded_constants": [
+        -3
+      ]
+    },
+    {
+      "id": "ext001-arithmetic-059",
+      "category": "arithmetic",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 8,
+      "missing_teacher_literals": [
+        1
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-arithmetic-196",
+      "category": "arithmetic",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        -1734144581
+      ],
+      "folded_constants": [
+        -1734144581
+      ]
+    },
+    {
+      "id": "ext001-arithmetic-056",
+      "category": "arithmetic",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 20,
+      "missing_teacher_literals": [],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-bitwise-190",
+      "category": "bitwise",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 1,
+      "missing_teacher_literals": [],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-bitwise-027",
+      "category": "bitwise",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        -645306592
+      ],
+      "folded_constants": [
+        -645306592
+      ]
+    },
+    {
+      "id": "ext001-bitwise-114",
+      "category": "bitwise",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        -1007524529
+      ],
+      "folded_constants": [
+        -1007524529
+      ]
+    },
+    {
+      "id": "ext001-bitwise-028",
+      "category": "bitwise",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 171,
+      "missing_teacher_literals": [
+        67108864
+      ],
+      "folded_constants": [
+        67108864
+      ]
+    },
+    {
+      "id": "ext001-branch-047",
+      "category": "branch",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 217,
+      "missing_teacher_literals": [
+        7
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-branch-014",
+      "category": "branch",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        0
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-branch-041",
+      "category": "branch",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 139,
+      "missing_teacher_literals": [
+        -1161776836
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-branch-087",
+      "category": "branch",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 0,
+      "missing_teacher_literals": [
+        63
+      ],
+      "folded_constants": [
+        63
+      ]
+    },
+    {
+      "id": "ext001-branch-146",
+      "category": "branch",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 144,
+      "missing_teacher_literals": [
+        3968
+      ],
+      "folded_constants": [
+        3968
+      ]
+    },
+    {
+      "id": "ext001-combined-015",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 133,
+      "missing_teacher_literals": [
+        62914560
+      ],
+      "folded_constants": [
+        62914560
+      ]
+    },
+    {
+      "id": "ext001-combined-150",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 102,
+      "missing_teacher_literals": [
+        -1238518317,
+        7
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-182",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 140,
+      "missing_teacher_literals": [
+        0
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-048",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 136,
+      "missing_teacher_literals": [
+        -463033501,
+        0
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-029",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 182,
+      "missing_teacher_literals": [
+        15
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-153",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 143,
+      "missing_teacher_literals": [
+        15
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-163",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 130,
+      "missing_teacher_literals": [
+        0,
+        7
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-134",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 131,
+      "missing_teacher_literals": [
+        7680
+      ],
+      "folded_constants": [
+        7680
+      ]
+    },
+    {
+      "id": "ext001-combined-161",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 142,
+      "missing_teacher_literals": [],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-combined-171",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 43,
+      "missing_teacher_literals": [
+        16,
+        4095
+      ],
+      "folded_constants": [
+        4095
+      ]
+    },
+    {
+      "id": "ext001-combined-004",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 118,
+      "missing_teacher_literals": [
+        251658240
+      ],
+      "folded_constants": [
+        251658240
+      ]
+    },
+    {
+      "id": "ext001-combined-122",
+      "category": "combined",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 34,
+      "missing_teacher_literals": [],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-loop-174",
+      "category": "loop",
+      "diff_type": "instruction_or_operand_structure_differences",
+      "matching_inputs": 68,
+      "missing_teacher_literals": [],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-loop-102",
+      "category": "loop",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 21,
+      "missing_teacher_literals": [
+        -211419823,
+        983040
+      ],
+      "folded_constants": [
+        983040
+      ]
+    },
+    {
+      "id": "ext001-loop-110",
+      "category": "loop",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 121,
+      "missing_teacher_literals": [
+        917504
+      ],
+      "folded_constants": [
+        917504
+      ]
+    },
+    {
+      "id": "ext001-loop-184",
+      "category": "loop",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 158,
+      "missing_teacher_literals": [
+        -1356160570
+      ],
+      "folded_constants": []
+    },
+    {
+      "id": "ext001-loop-041",
+      "category": "loop",
+      "diff_type": "only_numeric_literal_differences",
+      "matching_inputs": 118,
+      "missing_teacher_literals": [
+        50331648
+      ],
+      "folded_constants": [
+        50331648
+      ]
+    }
+  ]
+}

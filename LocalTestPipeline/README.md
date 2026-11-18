@@ -18,7 +18,7 @@ python3 run.py
 5. AI의 원문 IR을 LLVM 검증·컴파일한 뒤, 같은 256개 입력의 결과를 원본 C와 비교합니다.
 6. 통과 여부와 첫 불일치 입력을 표시하고 전체 기록을 `outputs/`에 저장합니다.
 
-기본 모델은 `magicompile-qwen3:4b`입니다. **이 모델은 Ollama에 등록되어 실제 IR 생성과 사용 후 메모리 해제까지 확인한 상태**입니다. 재등록 방법은 기존 프로젝트의 [Ollama 준비 방법](../c-llvm-dataset/docs/old_docs/OLLAMA_LOCAL.md)에 있습니다. Ollama에 등록된 모델은 `ollama list`로 확인하세요. 이 프로그램은 다른 모델로 자동 대체하지 않습니다.
+기본 모델은 `magicompile-qwen3:4b`입니다. **이 모델은 Ollama에 등록되어 실제 IR 생성과 사용 후 메모리 해제까지 확인한 상태**입니다. 재등록 방법은 기존 프로젝트의 [Ollama 준비 방법](../c-llvm-dataset/docs/guides/OLLAMA_LOCAL.md)에 있습니다. Ollama에 등록된 모델은 `ollama list`로 확인하세요. 이 프로그램은 다른 모델로 자동 대체하지 않습니다.
 
 ## 코드 넣기
 

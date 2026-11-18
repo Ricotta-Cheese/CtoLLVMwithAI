@@ -2,8 +2,6 @@
 
 학습 완료된 Qwen3-4B-Instruct-2507 adapter를 고정하고 시험 110함수를 처음 평가하는 작업입니다. 추가 학습, 정답 기반 수정, 재시도는 하지 않습니다.
 
-작업: https://www.kaggle.com/code/ritaainsworth/magicompile-qwen3-test110-002
-
 - 학습 작업 version 1의 adapter SHA-256을 확인하고 불일치 시 중단합니다.
 - 코퍼스 `splits.json`의 시험 110 ID를 그대로 사용합니다. 추론 payload에는 ID·분류·입력 프롬프트만 있으며 정답 IR·기대 실행값은 넣지 않습니다.
 - T4 두 개에서 서로 다른 함수를 나누어 추론합니다. GPU가 하나뿐이면 하나로 실행합니다.
@@ -12,11 +10,9 @@
 - Kaggle에서는 추론을 수행합니다. 데이터가 Apple ARM64 타깃이므로 원문 IR의 컴파일·실행 일치는 기존 잠금 환경의 로컬 Apple Clang으로 확인합니다. Linux 타깃으로 수정하지 않습니다.
 - 이 시험 결과를 향후 학습·모델 선택에 사용하면 해당 시험 세트가 개발용으로 노출된 것으로 취급하고, 새 최종 시험 세트를 마련해야 합니다.
 
-프로젝트 `c-llvm-dataset`에서 상태와 결과를 확인합니다.
+Kaggle 출력을 `training/kaggle-results/qwen3-test-002`에 내려받은 뒤, 프로젝트 `c-llvm-dataset`에서 평가합니다.
 
 ```bash
-kaggle kernels status ritaainsworth/magicompile-qwen3-test110-002
-kaggle kernels output ritaainsworth/magicompile-qwen3-test110-002 -p training/kaggle-results/qwen3-test-002
 python3.14 training/evaluate_generated_ir.py \
   training/kaggle-results/qwen3-test-002/qwen3-test110-002/test-predictions.jsonl \
   --artifacts corpus-1100-v001 \

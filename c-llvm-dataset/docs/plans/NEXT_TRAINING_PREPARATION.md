@@ -1,6 +1,6 @@
 # 다음 학습 준비안 v003
 
-작성일 2026-11-16. 코드 구현을 의뢰하기 위한 준비 문서다. 기준 제안은 [v002 제안서](NEXT_TRAINING_PROPOSAL.md), 구현 계약은 [코드 생성 명세](NEXT_TRAINING_CODEGEN_SPEC.md), 수량·설정·패널 ID는 [기계 판독용 계획](../training/proposals/v003/preparation-plan.json), 확인한 원본은 [근거 스냅샷](../training/proposals/v003/preparation-evidence.json)에 있다. v003은 문서 패키지 버전이며 향후 코퍼스 버전은 `corpus-1100-v002`로 예정한다.
+작성일 2026-11-16. 코드 구현을 의뢰하기 위한 준비 문서다. 기준 제안은 [v002 제안서](NEXT_TRAINING_PROPOSAL.md), 구현 계약은 [코드 생성 명세](NEXT_TRAINING_CODEGEN_SPEC.md), 수량·설정·패널 ID는 [기계 판독용 계획](../../training/proposals/v003/preparation-plan.json), 확인한 원본은 [근거 스냅샷](../../training/proposals/v003/preparation-evidence.json)에 있다. v003은 문서 패키지 버전이며 향후 코퍼스 버전은 `corpus-1100-v002`로 예정한다.
 
 ## 확정한 준비 결정
 

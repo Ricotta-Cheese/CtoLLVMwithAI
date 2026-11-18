@@ -99,7 +99,6 @@ Qwen 자체의 검증 loss는 학습 전 0.67611에서 20 step 0.08332, 40 step 
 
 ### 저장 및 확인
 
-- [비공개 Kaggle 작업](https://www.kaggle.com/code/ritaainsworth/magicompile-qwen-pilot-001)
 - [학습 요약](../../training/kaggle-results/qwen-pilot-001/qwen-pilot-001/summary.json)
 - [학습 지표](../../training/kaggle-results/qwen-pilot-001/qwen-pilot-001/metrics.json)
 - [LoRA 가중치와 토크나이저](../../training/kaggle-results/qwen-pilot-001/qwen-pilot-001/adapter-best)

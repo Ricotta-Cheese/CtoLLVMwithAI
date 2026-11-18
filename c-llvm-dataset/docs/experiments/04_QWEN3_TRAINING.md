@@ -23,16 +23,11 @@ Kaggle에서는 macOS 타깃 IR을 텍스트로 학습합니다. 생성 IR의 �
 
 ## 실행과 재현
 
-작업: [비공개 Kaggle 학습](https://www.kaggle.com/code/ritaainsworth/magicompile-qwen3-4b-corpus1100-001)
-
 프로젝트 루트 `c-llvm-dataset`에서 실행합니다.
 
 ```bash
 python3.14 training/build_kaggle_qwen3.py
 kaggle kernels push -p training/kaggle-qwen3-001 --accelerator NvidiaTeslaT4 -t 14400
-kaggle kernels status ritaainsworth/magicompile-qwen3-4b-corpus1100-001
-kaggle kernels logs ritaainsworth/magicompile-qwen3-4b-corpus1100-001 --follow
-kaggle kernels output ritaainsworth/magicompile-qwen3-4b-corpus1100-001 -p training/kaggle-results/qwen3-001
 ```
 
 학습 자료·모델 리비전·소스·고정 의존성·분할의 SHA-256을 기록합니다. 모델 캐시와 환경은 Kaggle `/kaggle/temp`에 두고, 출력에는 선택한 adapter·토크나이저·기록만 남깁니다. 기반 모델 약 8GB를 로컬로 중복 다운로드할 필요는 없습니다. GPU 비결정성 및 Kaggle 이미지 변경으로 가중치의 바이트 단위 재현성까지 보장하지는 않습니다.
@@ -83,4 +78,4 @@ Kaggle 작업은 `COMPLETE`로 정상 종료됐습니다. 학습은 220 step / 1
 
 ## 동결 시험 세트 평가 완료
 
-후속 시험 110함수를 평가해 생성 완료 110/110, LLVM 검증·컴파일 108/110, 저장 입력 전부 동작 일치 **72/110(65.5%)**를 확인했습니다. 이제 시험 세트는 평가에 사용된 상태입니다. 분류별 정확도와 오류 분석은 [시험 결과 문서](QWEN3_KAGGLE_TEST.md)를 확인하세요.
+후속 시험 110함수를 평가해 생성 완료 110/110, LLVM 검증·컴파일 108/110, 저장 입력 전부 동작 일치 **72/110(65.5%)**를 확인했습니다. 이제 시험 세트는 평가에 사용된 상태입니다. 분류별 정확도와 오류 분석은 [시험 결과 문서](05_QWEN3_TEST.md)를 확인하세요.

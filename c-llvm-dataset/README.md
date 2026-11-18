@@ -1,16 +1,14 @@
-# C → LLVM IR 파일럿 데이터셋
+# c-llvm-dataset — 데이터 생성·학습·평가
 
-외부 Python 패키지 없이 C–LLVM IR 쌍을 생성하고 실행 결과를 검증하는 파이프라인입니다. 현재 학습 코퍼스는 검증된 1,100쌍이며, 주력 모델은 Qwen3-4B-Instruct-2507입니다. [현재 Kaggle 학습 설정과 실행 방법](docs/old_docs/QWEN3_KAGGLE.md)을 확인하세요. 모델 학습용 대규모 데이터 생성에 앞서 생성·검증 과정의 정확성을 확인하는 용도입니다.
+외부 Python 패키지 없이 C–LLVM IR 쌍을 생성하고 실행 결과로 검증하는 파이프라인과, 이 데이터로 학습한 모델의 학습·평가 기록입니다. 현재 학습 코퍼스는 검증된 **1,100쌍**, 주력 모델은 **Qwen3-4B-Instruct-2507 + QLoRA**이며 동결 시험 110함수에서 실행 일치 72/110(65.5%)을 기록했습니다. 프로젝트 전체 요약은 [루트 README](../README.md)를 보세요.
 
-데이터셋을 새로 생성하거나 확장하기 전에는 [데이터셋 생성 전 확인 지침](docs/DATASET_GENERATION_GUIDELINES.md)을 확인하세요. 환경 잠금, 생성 범위, 실패 처리, 재현성 확인, 학습 데이터 분리 기준을 담았습니다.
-
-Colab에서 사전학습 가중치 없이 토크나이저와 모델을 직접 학습하려면 [처음부터 학습하는 방법](docs/old_docs/COLAB_FROM_SCRATCH.md)을 보세요. [학습 노트북](notebooks/train_from_scratch_colab.ipynb)을 보존했습니다. 이전 가중치와 업로드 ZIP은 Qwen3 전환 과정에서 정리했습니다.
-
-Kaggle에서는 T4 한 개로 20 step 학습과 10 step 체크포인트 재개를 완료했습니다. 실제 측정값과 실행 관리는 [Kaggle 시험 학습 결과](docs/old_docs/KAGGLE_SMOKE_RESULT.md)에 기록했습니다.
-
-기존 100쌍으로 첫 200 step 학습도 완료했습니다. 최저 검증 loss는 175 step의 0.89831이며, [첫 학습 결과와 학습 곡선](docs/old_docs/KAGGLE_FIRST_TRAINING_RESULT.md)에 설정·측정값·생성 미리보기의 한계를 기록했습니다.
-
-Qwen2.5-Coder-1.5B도 QLoRA로 60 step 학습해 비교했습니다. 같은 검증 함수 10개에서 미세조정 Qwen은 LLVM 검증·컴파일 4개, 모든 평가 입력의 동작 일치 2개를 통과했습니다. 직접 만든 모델과 학습 전 Qwen은 LLVM 검증 통과가 0개였습니다. [Qwen 비교 결과](docs/old_docs/QWEN_COMPARISON.md)에 함수별 오류와 평가 한계를 기록했으며, 시험 세트는 아직 사용하지 않았습니다.
+| 문서 | 내용 |
+|---|---|
+| [docs/README.md](docs/README.md) | 전체 문서 목차 |
+| [데이터셋 생성 전 확인 지침](docs/guides/DATASET_GENERATION_GUIDELINES.md) | 데이터를 새로 만들거나 확장하기 전의 환경 잠금·범위·재현성·분할 기준 |
+| [실험 기록 01~05](docs/experiments/) | 환경 확인 → 처음부터 학습 → Qwen2.5 비교 → Qwen3 학습 → 동결 시험 |
+| [Ollama 로컬 실행](docs/guides/OLLAMA_LOCAL.md) | 학습한 adapter를 병합해 로컬 모델로 등록 |
+| [다음 학습 계획](docs/plans/NEXT_TRAINING_PROPOSAL.md) | 오답 분석을 반영한 다음 데이터·학습 제안 |
 
 ## 현재 실행 환경과 범위
 
@@ -125,6 +123,6 @@ artifacts/
 
 ## 다음 학습 제안
 
-첨부 보고서·생성기·분할·시험 기록을 검토한 [다음 학습 개선 제안서](docs/NEXT_TRAINING_PROPOSAL.md)를 추가했습니다. 고정 타깃 속성 분리, 상수·복합 구조 보강, family OOD 평가, 단계별 실험과 자원 상한을 담았으며 아직 신규 학습은 시작하지 않았습니다.
+첨부 보고서·생성기·분할·시험 기록을 검토한 [다음 학습 개선 제안서](docs/plans/NEXT_TRAINING_PROPOSAL.md)를 추가했습니다. 고정 타깃 속성 분리, 상수·복합 구조 보강, family OOD 평가, 단계별 실험과 자원 상한을 담았으며 아직 신규 학습은 시작하지 않았습니다.
 
-후속 검토를 반영한 [다음 학습 준비안 v003](docs/NEXT_TRAINING_PREPARATION.md)과 [코드 생성 명세](docs/NEXT_TRAINING_CODEGEN_SPEC.md)에 구현 계약, 인자 재대입 범위, 평가 패널, checkpoint·예산 정책을 정리했습니다. 설정 계획과 근거 스냅샷은 `training/proposals/v003/`에 있습니다. 현재 완료 범위는 명세와 비실행 준비 자료이며, 구현·신규 데이터·학습 검증은 준비안의 단계별 완료 조건을 따릅니다.
+후속 검토를 반영한 [다음 학습 준비안 v003](docs/plans/NEXT_TRAINING_PREPARATION.md)과 [코드 생성 명세](docs/plans/NEXT_TRAINING_CODEGEN_SPEC.md)에 구현 계약, 인자 재대입 범위, 평가 패널, checkpoint·예산 정책을 정리했습니다. 설정 계획과 근거 스냅샷은 `training/proposals/v003/`에 있습니다. 현재 완료 범위는 명세와 비실행 준비 자료이며, 구현·신규 데이터·학습 검증은 준비안의 단계별 완료 조건을 따릅니다.

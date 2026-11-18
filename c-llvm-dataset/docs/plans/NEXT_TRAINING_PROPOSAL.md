@@ -49,7 +49,7 @@ Kaggle 시험은 NF4 기반 모델+adapter이고, 로컬 Ollama는 F16 병합/ML
 
 ### 3.2 이번에 추가로 점검한 결과
 
-읽기 전용 점검 결과는 [evidence.json](../training/proposals/v002/evidence.json)에 있다.
+읽기 전용 점검 결과는 [evidence.json](../../training/proposals/v002/evidence.json)에 있다.
 
 - 코퍼스 파일 무결성과 880/110/110 분할 검사 통과.
 - 정답 1,100개의 `target-features` 목록은 전부 동일하다.
@@ -225,13 +225,13 @@ B0와 후보를 같은 C 패널, compiler lock, 입력, 추론 backend로 평가
 
 ### 프로젝트 근거
 
-- [첨부 보고서 보존본](reviews/20261116_external_review.txt): 검토한 외부 해석. 수치·구현 주장은 아래 원본과 교차 확인.
-- [시험 분석 원본](../training/evaluations/qwen3-test-002/analysis.json), [시험 실행 결과](../training/evaluations/qwen3-test-002/report.json).
-- [학습 원본 summary](../training/kaggle-results/qwen3-001/qwen3-4b-corpus1100-001/training-summary.json), [학습 코드](../training/qwen3_train.py), [시험 설정](../training/kaggle-qwen3-test-001/test-spec.json).
-- [생성기](../src/c_llvm_dataset/generator.py), [구조 해시](../src/c_llvm_dataset/model.py), [분할·누출 검사](../src/c_llvm_dataset/corpus.py), [분할 기록](../corpus-1100-v001/split_report.json).
-- [데이터 생성 지침](DATASET_GENERATION_GUIDELINES.md): 기존 잠금·IR 속성 보존 규칙은 유지하고 새 프로필에서 변경을 명시해야 함.
-- [추가 점검 결과](../training/proposals/v002/evidence.json), [모양별 매핑](../training/proposals/v002/coarse-shape-groups.json), 재실행 `python3.14 training/audit_next_training.py`.
-- [로컬 모델 등록 기록](../local/ollama/local-run-verification.json): F16 생성·메모리 해제 기록. 일부 예전 LocalTestPipeline 원시 출력 경로는 현재 작업 폴더에 남아 있지 않으므로, 예전 add.c 확대 검사는 과거 기록으로만 취급하고 새 성능 근거로 사용하지 않았다.
+- 첨부 보고서(외부 검토 의견, 저장소 미포함): 검토한 외부 해석. 수치·구현 주장은 아래 원본과 교차 확인.
+- [시험 분석 원본](../../training/evaluations/qwen3-test-002/analysis.json), [시험 실행 결과](../../training/evaluations/qwen3-test-002/report.json).
+- [학습 원본 summary](../../training/kaggle-results/qwen3-001/qwen3-4b-corpus1100-001/training-summary.json), [학습 코드](../../training/qwen3_train.py), [시험 설정](../../training/kaggle-qwen3-test-001/test-spec.json).
+- [생성기](../../src/c_llvm_dataset/generator.py), [구조 해시](../../src/c_llvm_dataset/model.py), [분할·누출 검사](../../src/c_llvm_dataset/corpus.py), [분할 기록](../../corpus-1100-v001/split_report.json).
+- [데이터 생성 지침](../guides/DATASET_GENERATION_GUIDELINES.md): 기존 잠금·IR 속성 보존 규칙은 유지하고 새 프로필에서 변경을 명시해야 함.
+- [추가 점검 결과](../../training/proposals/v002/evidence.json), [모양별 매핑](../../training/proposals/v002/coarse-shape-groups.json), 재실행 `python3.14 training/audit_next_training.py`.
+- [로컬 모델 등록 기록](../../local/ollama/local-run-verification.json): F16 생성·메모리 해제 기록. 일부 예전 LocalTestPipeline 원시 출력 경로는 현재 작업 폴더에 남아 있지 않으므로, 예전 add.c 확대 검사는 과거 기록으로만 취급하고 새 성능 근거로 사용하지 않았다.
 
 ### 외부 1차 자료
 

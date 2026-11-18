@@ -2,7 +2,7 @@
 
 이 문서는 C–LLVM IR 데이터셋을 새로 생성하거나 규모를 늘리기 전에 확인할 작업 기준입니다. 현재 구현인 `c-llvm-dataset` v0.1.0에 맞추어 작성했습니다. 명령은 프로젝트 루트에서 실행합니다.
 
-기존 100쌍은 파이프라인 점검용 파일럿입니다. 새 데이터셋을 만들 때에는 입력 언어의 범위, 실행 환경, 검증 기준, 재현성 근거를 함께 기록해야 합니다. 구현의 세부 실행 방법은 [프로젝트 README](../README.md)를 참고하세요.
+기존 100쌍은 파이프라인 점검용 파일럿입니다. 새 데이터셋을 만들 때에는 입력 언어의 범위, 실행 환경, 검증 기준, 재현성 근거를 함께 기록해야 합니다. 구현의 세부 실행 방법은 [프로젝트 README](../../README.md)를 참고하세요.
 
 ## 1. 생성 목적과 지원 범위 확인
 
@@ -38,7 +38,7 @@ python3 run_pipeline.py doctor
 python3 -m unittest discover -s tests -v
 ```
 
-현재 기본 잠금은 macOS ARM64, Apple Clang 21, Python 3.14.8, 타깃 `arm64-apple-macosx27.2.0`입니다. 정확한 기준은 [`toolchain.lock.json`](../toolchain.lock.json)에 있습니다.
+현재 기본 잠금은 macOS ARM64, Apple Clang 21, Python 3.14.8, 타깃 `arm64-apple-macosx27.2.0`입니다. 정확한 기준은 [`toolchain.lock.json`](../../toolchain.lock.json)에 있습니다.
 
 `doctor`의 성공은 도구가 정상 동작한다는 뜻입니다. **기존 잠금과 현재 환경의 일치 여부는 `generate`가 별도로 검사합니다.** 현재 잠금에는 Clang 실행 파일 해시, 버전, 타깃, Python 버전, OS·아키텍처, 컴파일 옵션, macOS SDK 버전과 설정 해시가 포함됩니다.
 
@@ -52,7 +52,7 @@ python3 run_pipeline.py --clang /path/to/clang doctor --write-lock --lock toolch
 
 ## 3. 생성 설정과 다양성 확인
 
-- [ ] [`config.json`](../config.json)의 시드, 분류별 개수, 경계값, 난수 입력 수, 탐색 한도, 실행 시간 제한을 확인합니다.
+- [ ] [`config.json`](../../config.json)의 시드, 분류별 개수, 경계값, 난수 입력 수, 탐색 한도, 실행 시간 제한을 확인합니다.
 - [ ] 기존 데이터셋 재현이 목적이면 설정과 파이프라인 소스 코드를 변경하지 않습니다.
 - [ ] 새 실험의 설정은 별도 파일로 보관합니다. 설정 변경과 함께 생성 목적·문법 범위·도구 환경을 추적할 수 있게 합니다.
 - [ ] 상수와 변수명만 바꾼 변형으로 수량을 채우지 않습니다. 현재 생성기는 보수적인 구조 해시 중복도 거부합니다.
@@ -124,7 +124,7 @@ python3 run_pipeline.py compare artifacts-v002 /tmp/c-llvm-v002-reproduction
 
 `validate`만 실행하면 저장된 증거의 무결성과 내부 일치 여부를 검사합니다. 컴파일 및 실행을 다시 수행하려면 `--execute`가 필요합니다. 두 독립 생성 결과의 바이트 일치는 `compare`로 확인합니다.
 
-현재 루트의 [`reproducibility.json`](../reproducibility.json)은 기존 100쌍의 재현성 기록입니다. 새 실험의 근거로 재사용하지 않습니다. `compare`는 결과를 표준 출력으로 반환하며 이 기록 파일을 자동으로 갱신하지 않습니다.
+현재 루트의 [`reproducibility.json`](../../reproducibility.json)은 기존 100쌍의 재현성 기록입니다. 새 실험의 근거로 재사용하지 않습니다. `compare`는 결과를 표준 출력으로 반환하며 이 기록 파일을 자동으로 갱신하지 않습니다.
 
 재현성 확인 범위는 **동일한 설정·소스 코드·잠긴 도구 환경**입니다. 현재 잠금은 전체 OS를 보관하는 컨테이너 이미지 잠금이 아니며, 다른 OS·아키텍처·LLVM 버전에서 동일 IR 바이트를 보장하지 않습니다.
 

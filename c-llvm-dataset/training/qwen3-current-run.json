@@ -1,6 +1,5 @@
 {
   "kernel": "ritaainsworth/magicompile-qwen3-4b-corpus1100-001",
-  "url": "https://www.kaggle.com/code/ritaainsworth/magicompile-qwen3-4b-corpus1100-001",
   "kernel_version": 1,
   "state": "complete",
   "model_id": "Qwen/Qwen3-4B-Instruct-2507",

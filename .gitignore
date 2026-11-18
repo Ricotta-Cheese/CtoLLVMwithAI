@@ -23,3 +23,6 @@ checkpoint-*/
 
 # Local Ollama run metadata
 /c-llvm-dataset/local/ollama/download-status.json
+
+# Local-only notes (not published)
+/c-llvm-dataset/local-docs/

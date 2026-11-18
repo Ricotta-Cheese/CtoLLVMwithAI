@@ -22,7 +22,7 @@ python3.14 local/ollama/run_c.py local/ollama/example.c -o /tmp/example.ll
 
 ## 재구축
 
-재구축에 필요한 LoRA adapter는 [Kaggle 학습 결과를 내려받는 단계](QWEN3_KAGGLE.md)에서 준비합니다.
+재구축에 필요한 LoRA adapter는 [Kaggle 학습 결과를 내려받는 단계](../experiments/04_QWEN3_TRAINING.md)에서 준비합니다.
 
 임시 기반 가중치와 병합 파일은 `/private/tmp/magicompile-ollama-build`에 둡니다. 최종 모델은 Ollama의 사용자 모델 저장소에 등록됩니다.
 

@@ -1,6 +1,6 @@
 # 다음 학습 코드 생성 명세 v003
 
-작성일 2026-11-16. 이 문서는 향후 코드 생성 작업의 구현 계약이다. [준비 결정](NEXT_TRAINING_PREPARATION.md)과 [계획 JSON](../training/proposals/v003/preparation-plan.json)을 함께 적용한다. 현재 명세 패키지에는 실행 코드를 추가하지 않는다. 아래 파일명은 구현 시 사용할 권장 위치이며 기존 파일의 공개 진입점·v1 동작을 보존한다.
+작성일 2026-11-16. 이 문서는 향후 코드 생성 작업의 구현 계약이다. [준비 결정](NEXT_TRAINING_PREPARATION.md)과 [계획 JSON](../../training/proposals/v003/preparation-plan.json)을 함께 적용한다. 현재 명세 패키지에는 실행 코드를 추가하지 않는다. 아래 파일명은 구현 시 사용할 권장 위치이며 기존 파일의 공개 진입점·v1 동작을 보존한다.
 
 ## 1. 구현 단위와 의존 순서
 

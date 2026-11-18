@@ -2,7 +2,6 @@
 
 2026년 11월 13일, 기존 파일럿 100쌍으로 토크나이저와 모델을 처음부터 학습했습니다. 비공개 Kaggle 작업은 `COMPLETE`로 종료됐고, 실제 optimizer 업데이트 200회를 확인했습니다.
 
-- [비공개 Kaggle 작업](https://www.kaggle.com/code/ritaainsworth/magicompile-scratch-pilot-001)
 - [요약 지표](../../training/kaggle-results/pilot-001/scratch-pilot-001/summary.json)
 - [전체 학습 지표](../../training/kaggle-results/pilot-001/scratch-pilot-001/metrics.json)
 - [생성 미리보기](../../training/kaggle-results/pilot-001/scratch-pilot-001/validation-preview.json)
@@ -57,7 +56,7 @@
 
 이번 결과는 처음부터 학습하는 모델이 실제로 업데이트되고, 지표와 가중치를 저장할 수 있다는 첫 학습 결과입니다. LLVM 구문 통과율, 컴파일 성공률, 의미 정확도를 측정한 결과는 아닙니다. 정답의 반복적인 헤더와 명령 형식 학습이 토큰 loss에 영향을 줬을 가능성이 있으며, C 의미를 보존하는 변환 능력은 별도 실행 평가로 확인해야 합니다.
 
-현재 100쌍은 소규모 파일럿입니다. 다음 실험에서는 생성·검증 규칙을 유지하면서 데이터 구조와 수량을 늘리고, 구조 계열을 분리한 평가와 컴파일·실행 평가를 준비하는 것이 적절합니다. [생성 전 지침](../DATASET_GENERATION_GUIDELINES.md)을 함께 확인하세요.
+현재 100쌍은 소규모 파일럿입니다. 다음 실험에서는 생성·검증 규칙을 유지하면서 데이터 구조와 수량을 늘리고, 구조 계열을 분리한 평가와 컴파일·실행 평가를 준비하는 것이 적절합니다. [생성 전 지침](../guides/DATASET_GENERATION_GUIDELINES.md)을 함께 확인하세요.
 
 ## 산출물 보관
 

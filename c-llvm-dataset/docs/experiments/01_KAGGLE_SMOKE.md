@@ -2,7 +2,6 @@
 
 2026년 11월 13일, 로그인된 계정에서 비공개 작업을 CLI로 제출해 학습·체크포인트 저장·재개를 확인했습니다.
 
-- 작업: [MAGICompile scratch smoke 20261113](https://www.kaggle.com/code/ritaainsworth/magicompile-scratch-smoke-20261113)
 - 상태: `COMPLETE`, 시험 판정 `passed`
 - 제출 코드: [`training/kaggle-smoke/run.py`](../../training/kaggle-smoke/run.py)
 - 실행 설정: [`kernel-metadata.json`](../../training/kaggle-smoke/kernel-metadata.json)
@@ -39,13 +38,6 @@
 `run.log`에는 전체 실행 로그가, `quota-after.txt`에는 실행 후 확인한 할당량이 있습니다. 실행 전 GPU 할당량은 30시간이었습니다.
 
 ## 실행 관리
-
-아래 명령으로 상태와 로그를 확인할 수 있습니다.
-
-```bash
-kaggle kernels status ritaainsworth/magicompile-scratch-smoke-20261113
-kaggle kernels logs ritaainsworth/magicompile-scratch-smoke-20261113
-```
 
 같은 작업의 새 버전을 제출해 시험을 다시 실행하려면 다음 명령을 사용합니다. 이 명령은 GPU 할당량을 사용합니다.
 
